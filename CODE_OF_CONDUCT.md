@@ -39,7 +39,7 @@ Signed by
     Ulises Almaguer Guzmán   .			          Lisieux del Rocío Serrano Paz  .
 
 
-    Jose Carlos Pacheco Sanchez .     			  Marla Mishell Galván Rodríguez .
+    Jose Carlos Pacheco Sanchez  .     			  Marla Mishell Galván Rodríguez .
 
 
     Giancarlo Marte Peralta   . 
