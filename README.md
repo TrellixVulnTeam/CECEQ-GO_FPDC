@@ -1,4 +1,4 @@
-# UbiQro
+# UbiQrooo
 
 <strong>Mobile App objective requirement:</strong>
 
