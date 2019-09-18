@@ -21,9 +21,9 @@
 <body style="background-color: #666666;">
 
 <div class="limiter">
-    <form class="login100-form validate-form">
+    <form class="login100-form validate-form" method="post">
 					<span class="login100-form-title p-b-43">
-						Inicia Sesion para continuar
+						Iniciar Sesion
 					</span>
 
 
@@ -49,7 +49,7 @@
             </div>
 
             <div>
-                <a href="#" class="txt1">
+                <a href="{% url 'restore' %}" class="txt1">
                     Olvidaste la contraseña
                 </a>
             </div>
@@ -57,8 +57,8 @@
 
 
         <div class="container-login100-form-btn">
-            <button class="login100-form-btn">
-                Iniciar Sesion
+            <button class="login100-form-btn" type="submit">
+                <a href="{% url 'board' %}" style="color: white">Iniciar Sesion</a>
             </button>
         </div>
 

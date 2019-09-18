@@ -5,4 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def login(request):
-    return render(request,'login/login.html',{'title': 'Login - Home'})
+    return render(request,'login/login.html',{'title': 'CECEQ GO'})
+
+def restore(request):
+    return render(request,'login/recuperarcontrasena.html',{'title': 'Recuperar contraseña'})
