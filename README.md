@@ -1,4 +1,4 @@
-# UbiQrooo
+# CECEQ-GO
 
 <strong>Mobile App objective requirement:</strong>
 
