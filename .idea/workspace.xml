@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="e30cc714-878b-4964-972f-567157493bbe" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/UbiQro.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
@@ -2408,6 +2409,9 @@
       <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/views/templates/technical_500.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/views/templates/technical_500.txt" afterDir="false" />
     </list>
+=======
+    <list default="true" id="2d2c66b6-c876-472e-8e05-1f437673672d" name="Default Changelist" comment="" />
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2417,6 +2421,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -2432,6 +2437,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+=======
+  <component name="ProjectId" id="1QzWrxvfKNzJeyfQpmPNLkF0YIE" />
+  <component name="PropertiesComponent">
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -2447,6 +2456,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager">
     <configuration name="UbiQro" type="Python.DjangoServer" factoryName="Django server">
       <module name="UbiQro" />
@@ -2472,11 +2482,14 @@
       <method v="2" />
     </configuration>
   </component>
+=======
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="e30cc714-878b-4964-972f-567157493bbe" name="Default Changelist" comment="" />
       <created>1567807479333</created>
       <option name="number" value="Default" />
@@ -2485,6 +2498,14 @@
       <workItem from="1567807482454" duration="53000" />
       <workItem from="1567897720146" duration="456000" />
       <workItem from="1567898267860" duration="213000" />
+=======
+      <changelist id="2d2c66b6-c876-472e-8e05-1f437673672d" name="Default Changelist" comment="" />
+      <created>1568774108220</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568774108220</updated>
+      <workItem from="1568774114022" duration="73000" />
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
     </task>
     <servers />
   </component>
@@ -2496,15 +2517,22 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+=======
+            <State />
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+=======
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
 </project>

@@ -1,10 +1,29 @@
+<<<<<<< HEAD
 # UbiQro
 
 _Acá va un párrafo chido que describa lo que es el proyecto_
+=======
+# CECEQ-GO
 
-## Comenzando 
+<strong>Mobile App objective requirement:</strong>
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
 
+A mobile application that will provide the shortest path to a specific class or activity within the buildings in an interactive and easily understandable way. The app will make up for the possibility of a blocked path by providing multiple ways of reaching the destination. Making use of the GPS, the app will update your current position within the building in real time, therefore the user will only select its destination, either by selecting it on the map or searching it by activity (event or course) or by classroom.
+
+<<<<<<< HEAD
 _Estas instrucciones chidas te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+=======
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
+
+<strong>Web App objective requirement: </strong>
+
+A web system where the administrator can register new classrooms, delete them if necessary and change its assignation (update their names) within the library providing the users with the latest information about the activities and classrooms and the administrator with a simple way of managing them
+
+
+
+## Starting
+
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
@@ -17,55 +36,39 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 Da un ejemplo
 ```
 
-### Instalación 🔧
+### Instalation 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+Enviormente Instalation:
 
 ## Deployment 📦
 
 _Agrega notas adicionales sobre como hacer deploy_
 
-## Construido con 🛠️
+## Build with: 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Django](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [Django](https://www.djangoproject.com) - Django 2.2.4
+* [Python](https://www.python.org) - Python 3.4.7
+* [JetBrains Pycharm Professional](http://jetbrains.com) - PyCharm Professional
 
 
-## Wiki 
+## Version
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
 
-## Versionado 
+## Authors
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
 
-## Autores 
+* **Giancarlo Marte Peralta - A01702312* - *Trabajo Inicial* - [Gimape07](https://github.com/Gimape07)
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+* **Jose Carlos Pacheco Sanchez - A01702828* - *Trabajo Inicial* - [JosecarlosPa](https://github.com/JosecarlosPa)
 
-* **Jose Carlos Pacheco Sanchez** - *Trabajo Inicial* - [villanuevand](https://github.com/Josecarlospa)
-* **Otro Nombre** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+* **Marla Mishell Galván Rodríguez - A01701180* - *Trabajo Inicial* - [marlagr](https://github.com/marlagr)
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+* **Ulises Almaguer Guzmán - A01209070* - *Trabajo Inicial* - [Elcapi0998](https://github.com/Elcapi0998)
 
-## Licencia 📄
+* **Lisieux del Rocío Serrano Paz - A01207648* - *Trabajo Inicial* - [LisieuxS](https://github.com/LisieuxS)
 
-Este proyecto está bajo la Licencia (MITT) - mira el archivo [LICENSE](LICENSE) para detalles
+
+## Licence 📄
+
+This Project is under the licence (MIT) - check the next file [LICENSE](LICENSE) for more details
 
