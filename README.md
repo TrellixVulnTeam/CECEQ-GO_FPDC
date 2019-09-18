@@ -1,19 +1,9 @@
-<<<<<<< HEAD
-# UbiQro
-
-_Acá va un párrafo chido que describa lo que es el proyecto_
-=======
 # CECEQ-GO
 
 <strong>Mobile App objective requirement:</strong>
->>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
 
 A mobile application that will provide the shortest path to a specific class or activity within the buildings in an interactive and easily understandable way. The app will make up for the possibility of a blocked path by providing multiple ways of reaching the destination. Making use of the GPS, the app will update your current position within the building in real time, therefore the user will only select its destination, either by selecting it on the map or searching it by activity (event or course) or by classroom.
 
-<<<<<<< HEAD
-_Estas instrucciones chidas te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-=======
->>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
 
 <strong>Web App objective requirement: </strong>
 
