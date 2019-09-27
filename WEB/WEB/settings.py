@@ -88,9 +88,17 @@ DATABASES = {
         'PASSWORD': 'cecequbiqro',
         'HOST': 'localhost',
         'PORT': '3306',
+    },
+    'oficial': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ceceq_oficial',
+        'USER': 'ceceq_admin',
+        'PASSWORD': 'cecequbiqro',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
-
+DATABASE_ROUTERS = ['usuarios.routers.DefaultRouter', 'usuarios.routers.UsuariosRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
