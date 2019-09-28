@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login.apps.LoginConfig',
-    'instalaciones.apps.InstalacionesConfig',
-    'mapas.apps.MapasConfig',
-    'usuarios.apps.UsuariosConfig',
-    'reportes.apps.ReportesConfig',
+    'usuarios',
+    'login',
+    'mapas',
+    'reportes',
+    'instalaciones',
+    #'login.apps.LoginConfig',
+    #'instalaciones.apps.InstalacionesConfig',
+    #'mapas.apps.MapasConfig',
+    #'usuarios.apps.UsuariosConfig',
+    #'reportes.apps.ReportesConfig',
 
 ]
 
@@ -98,7 +103,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-DATABASE_ROUTERS = ['usuarios.routers.DefaultRouter', 'usuarios.routers.UsuariosRouter']
+DATABASE_ROUTERS = ['usuarios.routers.UsuariosRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
