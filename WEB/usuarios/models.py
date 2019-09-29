@@ -5,7 +5,7 @@ from django.db import models
 class UsuariosRegistrados(models.Model):
     class Meta:
         verbose_name = "usuario"
-    user_id = models.IntegerField() # Con este id se relaciona la id de la base del ceceq
+    user_id = models.IntegerField(primary_key=True) # Con este id se relaciona la id de la base del ceceq
     estado = models.CharField(max_length=1, default = 'a') # Es un booleano, a - activado, d - desactivado
     fecha_inicio = models.DateField(auto_now_add=True) # Para saber cuando inicio en nuestro sistema
 
