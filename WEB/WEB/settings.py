@@ -37,6 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios',
+    'login',
+    'mapas',
+    'reportes',
+    'instalaciones',
+    #'login.apps.LoginConfig',
+    #'instalaciones.apps.InstalacionesConfig',
+    #'mapas.apps.MapasConfig',
+    #'usuarios.apps.UsuariosConfig',
+    #'reportes.apps.ReportesConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -76,11 +87,23 @@ WSGI_APPLICATION = 'WEB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ceceq',
+        'USER': 'ceceq',
+        'PASSWORD': 'cecequbiqro',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'oficial': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ceceq_oficial',
+        'USER': 'ceceq_admin',
+        'PASSWORD': 'cecequbiqro',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
-
+DATABASE_ROUTERS = ['usuarios.routers.UsuariosRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

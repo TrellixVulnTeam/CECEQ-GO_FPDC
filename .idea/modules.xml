@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/UbiQro.iml" filepath="$PROJECT_DIR$/.idea/UbiQro.iml" />
+=======
       <module fileurl="file://$PROJECT_DIR$/.idea/CECEQ-GO.iml" filepath="$PROJECT_DIR$/.idea/CECEQ-GO.iml" />
+>>>>>>> 3d676b7d1700958ef2dc37ebc51f5574e9572abc
     </modules>
   </component>
 </project>
