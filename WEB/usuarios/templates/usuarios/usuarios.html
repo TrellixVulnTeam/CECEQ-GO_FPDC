@@ -6,6 +6,9 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<p>basic view</p>
+    <h1>Usuarios Registrados</h1>
+    {% for user in users %}
+        <p>{{ user.nombre_usuario }}</p>
+    {% endfor %}
 </body>
 </html>
