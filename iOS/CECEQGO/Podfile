@@ -8,7 +8,7 @@ target 'CECEQGO' do
   # Pods for CECEQGO
 
 
-pod 'MapboxNavigation', '~> 0.37.0'
+pod 'MapboxNavigation', '~> 0.38.0'
 
  
 

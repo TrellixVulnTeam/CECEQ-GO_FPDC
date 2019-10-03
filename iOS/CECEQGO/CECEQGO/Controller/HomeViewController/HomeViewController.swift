@@ -22,9 +22,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moreInformationBtn: UIButton!
     
     var directionsRoute: Route?
+    var feedItems: NSArray = NSArray()
+    var selectedLocation : CoursesModel = CoursesModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let homeModel = HomeModel()
+        homeModel.delegate = self
+        homeModel.downloadItems()
         
         coursesInfoTable.delegate = self
         coursesInfoTable.dataSource = self
@@ -37,34 +43,45 @@ class HomeViewController: UIViewController {
         
         searchBar.layer.cornerRadius = 22
         
+        moreInformationBtn.layer.masksToBounds = true
         moreInformationBtn.layer.cornerRadius = 25
-        moreInformationBtn.layer.shadowRadius = 10
-        moreInformationBtn.layer.masksToBounds = false
-        moreInformationBtn.layer.shadowColor = UIColor.init(red: 0.725, green: 0.796, blue: 0.877, alpha: 1.0).cgColor
+        moreInformationBtn.layer.shadowRadius = 25.0
+        moreInformationBtn.layer.shadowColor = UIColor(red:1.0, green:0.00, blue:0.00, alpha:1.0).cgColor
         moreInformationBtn.layer.shadowOffset = CGSize.zero
-        moreInformationBtn.layer.shadowOpacity = 0.8
-        moreInformationBtn.layer.shadowRadius = 5
-        
-        
+        moreInformationBtn.layer.shadowOpacity = 1.0
 
     }
 
 
 }
 
+extension HomeViewController : HomeModelProtocol{
+    
+    func itemsDownloaded(items: NSArray) {
+        feedItems = items
+        self.coursesInfoTable.reloadData()
+    }
+    
+    
+    
+}
+
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return feedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoursesTableViewCell", for: indexPath) as! CoursesTableViewCell
         
         cell.courseImage.image = #imageLiteral(resourceName: "ico_escultura")
-        cell.courseNameLabel.text = "Curso"
-        cell.classroomNameLabel.text = "A-120"
+        
+        let item: CoursesModel = feedItems[indexPath.row] as! CoursesModel
+        cell.courseNameLabel.text = item.des_subevento
+        
+        cell.classroomNameLabel.text = item.nombre_completo
         
         return cell
         
