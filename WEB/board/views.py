@@ -5,4 +5,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def dash(request):
-    return render(request,'board/dashboard.html')
+    if request.user.is_authenticated:
+        return render(request,'board/dashboard.html')
+    return render(request,'login/login.html')

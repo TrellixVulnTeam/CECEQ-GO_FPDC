@@ -9,8 +9,9 @@ from usuarios.models import Usuario
 from usuarios.models import UsuariosRegistrados
 
 def perfil(request):
-    return render(request, 'usuarios/perfil.html')
-
+    if request.user.is_authenticated:
+        return render(request, 'usuarios/perfil.html')
+    return render(request, 'login/login.html')
 def get_non_registered_users():
     users_r = UsuariosRegistrados.objects.all()
     list_of_ids = []
@@ -26,10 +27,11 @@ def get_registered_users():
     return Usuario.objects.filter(id_usuario__in=list_of_ids)
 
 def show_users(request):
-    users = get_registered_users()
-    users_noR= get_non_registered_users()
-    args = {'title':'CECEQ USUARIOS', 'users':users,'users_noR':users_noR}
-    return render(request,'usuarios/usuarios.html', args)
-
+    if request.user.is_authenticated:
+        users = get_registered_users()
+        users_noR= get_non_registered_users()
+        args = {'title':'CECEQ USUARIOS', 'users':users,'users_noR':users_noR}
+        return render(request,'usuarios/usuarios.html', args)
+    return render(request,'login/login.html')
 def show_modal_user(request):
     return 0;

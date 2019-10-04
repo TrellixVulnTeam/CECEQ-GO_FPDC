@@ -10,6 +10,7 @@ urlpatterns = [
     # Se pone el nombre views seguido de un nombre que se le dara
     # Despues se pondra el nombre en este caso login
     path('', views.login, name='login'),
+    path('logout/', views.login, name='logout'),
 
 
 ]

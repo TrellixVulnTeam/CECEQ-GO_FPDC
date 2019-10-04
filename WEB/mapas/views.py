@@ -5,7 +5,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def mapasA(request):
-    return render(request, 'mapas/mapasA.html')
-
+    if request.user.is_authenticated:
+        return render(request, 'mapas/mapasA.html')
+    return render(request, 'login/login.html')
 def mapasB(request):
-    return render(request, 'mapas/mapasB.html')
+    if request.user.is_authenticated:
+        return render(request, 'mapas/mapasB.html')
+    return render(request, 'login/login.html')
