@@ -37,17 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mapas',
     'board',
     'usuarios',
     'login',
-    'mapas',
     'reportes',
     'instalaciones',
-    #'login.apps.LoginConfig',
-    #'instalaciones.apps.InstalacionesConfig',
-    #'mapas.apps.MapasConfig',
-    #'usuarios.apps.UsuariosConfig',
-    #'reportes.apps.ReportesConfig',
+
 
 ]
 

@@ -9,7 +9,7 @@ urlpatterns = [
     # primero se pondra el nombre de la ruta a llama
     # Se pone el nombre views seguido de un nombre que se le dara
     # Despues se pondra el nombre en este caso login
-    path('', views.show_users, name='usuarios'),
-    path('perfil', views.perfil, name='perfil'),
+    path('plantaAlta/', views.mapasA, name='mapasA'),
+    path('plantaBaja', views.mapasB, name='mapasB'),
 
 ]

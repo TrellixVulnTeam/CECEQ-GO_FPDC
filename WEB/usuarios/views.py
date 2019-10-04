@@ -8,6 +8,9 @@ from django.http import HttpResponse
 from usuarios.models import Usuario
 from usuarios.models import UsuariosRegistrados
 
+def perfil(request):
+    return render(request, 'usuarios/perfil.html')
+
 def get_non_registered_users():
     users_r = UsuariosRegistrados.objects.all()
     list_of_ids = []

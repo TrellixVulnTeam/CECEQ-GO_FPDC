@@ -34,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'board' %}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-book-reader"></i>
                 </div>
@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'board' %}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -61,7 +61,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Mapa CECEQ</span>
@@ -69,8 +69,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">CECEQ </h6>
-                        <a class="collapse-item" href="#">Planta alta</a>
-                        <a class="collapse-item" href="#">Planta baja</a>
+                        <a class="collapse-item" href="{% url 'mapasA' %}">Planta alta</a>
+                        <a class="collapse-item" href="{% url 'mapasB' %}">Planta baja</a>
                     </div>
                 </div>
             </li>
@@ -89,7 +89,7 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes </h6>
-                        <a class="collapse-item" href="#">Reporte 1</a>
+                        <a class="collapse-item" href="{% url 'reporte_1' %}">Reporte 1</a>
                         <a class="collapse-item" href="#">Reporte 2</a>
                         <a class="collapse-item" href="#">Reporte 3</a>
                     </div>
@@ -106,7 +106,7 @@
             </div>
             <li class="nav-item">
 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'usuarios' %}">
                     <i class="fas fa-fw fa-user-friends"></i>
                     <span>Usuarios</span></a>
             </li>
@@ -237,7 +237,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{% url 'perfil' %}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
