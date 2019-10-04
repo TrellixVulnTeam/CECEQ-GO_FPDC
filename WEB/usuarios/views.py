@@ -23,6 +23,10 @@ def get_registered_users():
     return Usuario.objects.filter(id_usuario__in=list_of_ids)
 
 def show_users(request):
+    users = get_registered_users()
+    users_noR= get_non_registered_users()
+    args = {'title':'CECEQ USUARIOS', 'users':users,'users_noR':users_noR}
+    return render(request,'usuarios/nav-bars.html', args)
 
-    args = {'title':'CECEQ USUARIOS', 'users':users}
-    return render(request,'usuarios/usuarios.html', args)
+def show_modal_user(request):
+    return 0;
