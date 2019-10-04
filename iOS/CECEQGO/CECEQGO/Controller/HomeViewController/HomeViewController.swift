@@ -17,54 +17,117 @@ class HomeViewController: UIViewController {
     
   
     @IBOutlet weak var mapView: NavigationMapView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var coursesInfoTable: UITableView!
     @IBOutlet weak var moreInformationBtn: UIButton!
     
     var directionsRoute: Route?
     
+    var feedItems: NSArray = NSArray()
+    var selectedLocation : CoursesModel = CoursesModel()
+    
+    lazy var searchBar:UISearchBar = UISearchBar()
+    
+    var expandedIndexPath: NSIndexPath? // Index path of the cell that is currently expanded
+    let collapsedHeight: CGFloat = 44.0 // Constant to set the default collapsed height
+    //var ticketHistoryService = TicketHistoryService() // Service to gather info about Ticket History CoreData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let homeModel = HomeModel()
+        homeModel.delegate = self
+        homeModel.downloadItems()
+        
         coursesInfoTable.delegate = self
         coursesInfoTable.dataSource = self
-        coursesInfoTable.layer.cornerRadius = 15
+        coursesInfoTable.layer.cornerRadius = 30
+        coursesInfoTable.layer.borderWidth = 0.5
+        coursesInfoTable.layer.masksToBounds = false
+        coursesInfoTable.layer.cornerRadius = 25
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.showsUserLocation = true
         mapView.delegate = self
         mapView.setUserTrackingMode(.follow, animated: true, completionHandler: nil)
         
-        searchBar.layer.cornerRadius = 22
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.placeholder = " Buscar..."
+        searchBar.layer.cornerRadius = 20
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundColor = UIColor.yellow
+        searchBar.delegate = self
+        view.addSubview(searchBar)
         
-        moreInformationBtn.layer.cornerRadius = 25
-        moreInformationBtn.layer.shadowRadius = 10
+        definesPresentationContext = true
+        
         moreInformationBtn.layer.masksToBounds = false
+        moreInformationBtn.layer.cornerRadius = 25
         moreInformationBtn.layer.shadowColor = UIColor.init(red: 0.725, green: 0.796, blue: 0.877, alpha: 1.0).cgColor
         moreInformationBtn.layer.shadowOffset = CGSize.zero
         moreInformationBtn.layer.shadowOpacity = 0.8
         moreInformationBtn.layer.shadowRadius = 5
-        
-        
 
     }
 
 
 }
 
+extension HomeViewController: UISearchBarDelegate {
+    
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+        
+        if let nav = self.navigationController {
+            nav.view.endEditing(true)
+        }
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.dismissKeyboard(_:)))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+}
+
+
+extension HomeViewController : HomeModelProtocol{
+    
+    func itemsDownloaded(items: NSArray) {
+        feedItems = items
+        self.coursesInfoTable.reloadData()
+    }
+    
+    
+    
+}
+
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return feedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoursesTableViewCell", for: indexPath) as! CoursesTableViewCell
         
         cell.courseImage.image = #imageLiteral(resourceName: "ico_escultura")
-        cell.courseNameLabel.text = "Curso"
-        cell.classroomNameLabel.text = "A-120"
+        
+        let item: CoursesModel = feedItems[indexPath.row] as! CoursesModel
+        cell.courseNameLabel.text = item.des_subevento
+        
+        cell.classroomNameLabel.text = item.nombre_completo
         
         return cell
         
