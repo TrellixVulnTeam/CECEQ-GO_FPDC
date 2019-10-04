@@ -26,7 +26,7 @@ def show_users(request):
     users = get_registered_users()
     users_noR= get_non_registered_users()
     args = {'title':'CECEQ USUARIOS', 'users':users,'users_noR':users_noR}
-    return render(request,'usuarios/nav-bars.html', args)
+    return render(request,'usuarios/usuarios.html', args)
 
 def show_modal_user(request):
     return 0;
