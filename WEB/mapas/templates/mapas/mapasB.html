@@ -1,0 +1,42 @@
+{% extends 'usuarios/nav-bars.html' %}
+{% block titulo %} <title>MAPASA</title> {% endblock %}
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet'/>
+{% block contenido %}
+
+    <h1>Planta Baja</h1>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 25%;
+            bottom: 0;
+            height: 60%;
+            width: 50%;
+        }
+    </style>
+    </head>
+    <body>
+
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZWNhcmxvczE0MSIsImEiOiJjazFjczl5bGswMHUyM2lueXlsZzA5dGM1In0.WbXcQLjPawVXs8vSSeFybw';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-74.50, 40], // starting position
+            zoom: 9 // starting zoom
+        });
+
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+
+    </body>
+{% endblock %}
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
+</html>
