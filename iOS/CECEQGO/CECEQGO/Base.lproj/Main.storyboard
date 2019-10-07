@@ -26,10 +26,21 @@
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kk-cx-BFs" customClass="MBNavigationMapView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwJ-mw-i2E">
+                                                        <rect key="frame" x="0.0" y="20" width="414" height="70"/>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.59779822826385498" green="0.48416823148727417" blue="0.72416311502456665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="100" id="f79-Bf-gQP"/>
-                                                    <constraint firstAttribute="height" constant="400" id="kAC-jF-q4I"/>
+                                                    <constraint firstItem="jwJ-mw-i2E" firstAttribute="leading" secondItem="4Kk-cx-BFs" secondAttribute="leading" id="1eb-XD-fy2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jwJ-mw-i2E" secondAttribute="trailing" id="7s0-fW-xDv"/>
+                                                    <constraint firstItem="jwJ-mw-i2E" firstAttribute="top" secondItem="4Kk-cx-BFs" secondAttribute="top" constant="20" id="FTC-Ua-yeL"/>
+                                                    <constraint firstAttribute="height" constant="250" id="tl1-1q-Vui">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="250"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="400"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="jwJ-mw-i2E" secondAttribute="bottom" constant="310" id="vlS-YW-lEh"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="allowsScrolling" value="YES"/>
@@ -99,20 +110,20 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_escultura" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-7v-xgA">
-                                                                    <rect key="frame" x="20" y="26.5" width="42" height="42"/>
+                                                                    <rect key="frame" x="20" y="27" width="42" height="42"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="42" id="PBI-LY-hg3"/>
                                                                         <constraint firstAttribute="width" constant="42" id="R0v-1a-NKb"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIZ-yL-92Z">
-                                                                    <rect key="frame" x="94" y="1" width="34.5" height="91.5"/>
+                                                                    <rect key="frame" x="94" y="1" width="34.5" height="92.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="res-sZ-pAH">
-                                                                    <rect key="frame" x="350" y="37" width="34" height="19.5"/>
+                                                                    <rect key="frame" x="350" y="37.5" width="34" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -144,7 +155,7 @@
                                                 </connections>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.99992710350000003" green="0.87200838329999997" blue="0.34872198100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ewl-gT-iEq" secondAttribute="bottom" constant="-20" id="9e1-7F-M6m"/>
                                             <constraint firstAttribute="trailing" secondItem="ewl-gT-iEq" secondAttribute="trailing" id="BDy-Vy-KDM"/>
@@ -159,7 +170,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99992710350000003" green="0.87200838329999997" blue="0.34872198100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Mf1-ix-HEd" firstAttribute="leading" secondItem="lqu-ez-bCB" secondAttribute="leading" id="N5r-9D-jnv"/>
                                     <constraint firstAttribute="bottom" secondItem="Mf1-ix-HEd" secondAttribute="bottom" id="XXd-lt-34R"/>
@@ -169,7 +180,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99992710350000003" green="0.87200838329999997" blue="0.34872198100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lqu-ez-bCB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Au-pY-TjX"/>
                             <constraint firstItem="lqu-ez-bCB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9ma-3Y-pNt"/>
@@ -184,11 +195,21 @@
                         <outlet property="coursesInfoTable" destination="ewl-gT-iEq" id="R0a-mn-3si"/>
                         <outlet property="mapView" destination="4Kk-cx-BFs" id="YBi-LO-hdb"/>
                         <outlet property="moreInformationBtn" destination="PJT-Zf-gDm" id="JZG-ap-mie"/>
+                        <outlet property="searchBarView" destination="jwJ-mw-i2E" id="1l8-sR-JWz"/>
+                        <outlet property="searchDisplayController" destination="zsm-nH-Rwi" id="jLM-Ty-63v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="zsm-nH-Rwi">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="afO-tx-wGu"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="WBd-OR-GBA"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="qbh-N4-pFN"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="xf4-aF-hyq"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-88.405797101449281" y="99.776785714285708"/>
+            <point key="canvasLocation" x="-1207" y="100"/>
         </scene>
         <!--More Information View Controller-->
         <scene sceneID="c1E-yS-9S4">
