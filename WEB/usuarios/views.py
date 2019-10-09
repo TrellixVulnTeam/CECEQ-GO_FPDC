@@ -26,6 +26,7 @@ def get_registered_users():
         list_of_ids.append(user_r.user_id)
     return Usuario.objects.filter(id_usuario__in=list_of_ids)
 
+
 def show_users(request):
     if request.user.is_authenticated:
         users = get_registered_users()
