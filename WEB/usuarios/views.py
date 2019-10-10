@@ -53,10 +53,10 @@ def show_modal_user(request):
 
 #Filter in case of dictionary implementation, more information on:
 #https://stackoverflow.com/questions/8000022/django-template-how-to-look-up-a-dictionary-value-with-a-variable
-@register.filter
+@register.filter(name='get_item')
 def get_item(dictionary, key):
     return dictionary.get(key)
 
-@register.filter
-def get_status(dictionary, key):
-    return dictionary.get(key)
+@register.filter(name='get_function')
+def get_function(func, arg):
+    return func(arg)

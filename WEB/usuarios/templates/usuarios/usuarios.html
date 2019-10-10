@@ -90,7 +90,7 @@
                 <th scope="row">{{ user.id_usuario }}</th>
                 <td> {{ user.nombre_usuario }}</td>
                 <td>{{ user.nombre }}</td>
-                 {% if estado|get_item:user.id_usuario == 'a' %}
+                 {% if get_status_single_user|get_function:user.id_usuario == 'a' %}
                <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary active">
