@@ -49,6 +49,14 @@ def show_users(request):
 def show_modal_user(request):
     return 0;
 
+#Filters created in order to properly call functions from the template
+
+#Filter in case of dictionary implementation, more information on:
+#https://stackoverflow.com/questions/8000022/django-template-how-to-look-up-a-dictionary-value-with-a-variable
 @register.filter
 def get_item(dictionary, key):
+    return dictionary.get(key)
+
+@register.filter
+def get_status(dictionary, key):
     return dictionary.get(key)
