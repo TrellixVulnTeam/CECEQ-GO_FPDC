@@ -90,7 +90,7 @@
                 <th scope="row">{{ user.id_usuario }}</th>
                 <td> {{ user.nombre_usuario }}</td>
                 <td>{{ user.nombre }}</td>
-                 {% if get_status_single_user|get_function:user.id_usuario == 'a' %}
+                 {% if user.id_usuario|get_status == 'a' %}
                <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary active">
@@ -113,7 +113,7 @@
                     </div>
                 </td>
                 {% endif %}
-                <td></td>
+                <td>{{ user.id_usuario|get_fecha }}</td>
                 <td>
                     <button type="button" class="btn btn-danger">Eliminar <i
                             class="far fa-trash-alt"></i></button>
