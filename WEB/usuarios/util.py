@@ -34,6 +34,30 @@ def get_status_registered_user():
     for user_r in users_r:
         dictionary[user_r.id_usuario] = get_status_single_user(user_r.id_usuario)
     return dictionary
+
+#Funcion para modificar variable de sesion
+@register.filter(name='set_add_user')
+def set_add_user(request, id_usuario):
+    request.session['add_user'] = id_usuario
+
+#Funcion para obtener variable de sesion
+def get_add_user():
+    if 'add_user' in request.session:
+        return request.session['add_user']
+    return None
+
+def add_user_in_database(id_new):
+    registro = UsuariosRegistrados(user_id = id_new)
+    registro.save()
+
+def delete_user_in_database(id):
+    instance = UsuariosRegistrados.objects.get(user_id=id)
+    instance.delete()
+
+
+
+
+
 #Filters created in order to properly call functions from the template
 
 #Filter in case of dictionary implementation, more information on:
