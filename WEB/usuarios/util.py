@@ -57,7 +57,6 @@ def delete_user_in_database(id):
 
 
 
-
 #Filters created in order to properly call functions from the template
 
 #Filter in case of dictionary implementation, more information on:

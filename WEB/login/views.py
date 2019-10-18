@@ -7,26 +7,32 @@ from django.contrib.auth import login as do_login
 from django.shortcuts import redirect
 # LLamamos a los metodos por HHTPS
 from django.http import HttpResponse
+from login.forms import LoginForm
+# Llamamos a la señal
+from django.core.signals import *
 
 def login(request):
     # Creamos el formulario de autenticación vacío
     form = AuthenticationForm()
     if request.method == "POST":
         # Añadimos los datos recibidos al formulario
-        form = AuthenticationForm(data=request.POST)
+        form = LoginForm(request.POST)
         # Si el formulario es válido...
         if form.is_valid():
             # Recuperamos las credenciales validadas
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            usuario = form.cleaned_data['nombre_usuario']
+            contrasena = form.cleaned_data['contrasena']
 
             # Verificamos las credenciales del usuario
-            user = authenticate(username=username, password=password)
-
+            print(usuario)
+            print(contrasena)
+            user = authenticate(username=usuario, password=contrasena)
             # Si existe un usuario con ese nombre y contraseña
             if user is not None:
                 # Hacemos el login manualmente
+                print("doing login...")
                 do_login(request, user)
+                print("login completed")
                 # Y le redireccionamos a la portada
                 return redirect('board')
     return render(request, "login/login.html", {'form': form})
