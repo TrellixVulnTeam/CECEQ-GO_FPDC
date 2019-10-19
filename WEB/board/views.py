@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def dash(request):
+    print("Gets to board before error")
     if request.user.is_authenticated:
         return render(request,'board/dashboard.html')
     return redirect('login')

@@ -19,15 +19,20 @@ class PersonalizedLoginBackend(ModelBackend):
             return None
         if check_password(password, make_password(user.password)):
             try:
-                return UsuariosRegistrados.objects.get(user_id=user.id_usuario)
+                return UsuariosRegistrados.objects.get(id=user.id_usuario)
             except UsuariosRegistrados.DoesNotExist:
                 return None
         else:
             return None
 
-#    def get_user(self, user_id):
-#        """ Obtener objeto de usuario a partir del id. """
-#        try:
-#            return login_bd.Usuario.objects.get(id_usuario=user_id)
-#        except login_bd.Usuario.DoesNotExist:
-#            return None
+    def get_user(self, user_id):
+        """ Obtener objeto de usuario a partir del id. """
+        from django.contrib.auth.models import AnonymousUser
+        try:
+            user = UsuariosRegistrados.objects.get(id=user_id)
+        except Exception as e:
+            user = AnonymousUser()
+        return user
+
+
+
