@@ -2,6 +2,49 @@
 {% block titulo %} <title>Reporte de Cursos</title> {% endblock %}
 
 {% block contenido %}
-<h1>Cursos</h1>
+<div class ="row">
+        <div class ="col-sm-12">
+            <h1>Cursos</h1>
+        </div>
+    </div>
+     <div class ="row">
+        <div class ="col-sm-12">
+            <p id ="contenedor_tipo_boton">Reporte de:</p>
+        </div>
+    </div>
+    <br>
+    <div class ="row text-center">
+        <div class ="col-sm-6">
+            <div class ="row">
+            </div>
+        </div>
+        <div class ="col-sm-6">
+            <div class ="row">
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id="hoy" value="hoy" onclick="">Cursos hoy</button>
+                </div>
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id ="semana" value="semana">Cursos en la Semana</button>
+                </div>
+            </div>
+            <br><br>
+            <div class ="row">
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id="mensual" value="mensual" onclick="mes('contenedor_tipo_boton','densityChart')">Cursos en el mes</button>
+                </div>
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id ="anual" value="anual"onclick="year('contenedor_tipo_boton','densityChart')">Cursos en el año</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class ="row">
+                <div class ="col-sm-12">
+                    <button class ="btn btn-primary buttons_reportes" onclick="rango('contenedor_tipo_boton','densityChart')">Rango de Tiempo</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
 </html>
