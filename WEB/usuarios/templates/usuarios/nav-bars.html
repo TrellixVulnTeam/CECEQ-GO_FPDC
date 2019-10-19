@@ -24,6 +24,7 @@
         <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/users.css' %}" rel="stylesheet">
         <link href="{% static 'css/mapas.css' %}" rel="stylesheet">
+        <link href="{% static 'css/reportes.css' %}" rel="stylesheet">
 
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet'/>
@@ -97,9 +98,10 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes </h6>
-                        <a class="collapse-item" href="{% url 'reporte_1' %}">Reporte 1</a>
-                        <a class="collapse-item" href="#">Reporte 2</a>
-                        <a class="collapse-item" href="#">Reporte 3</a>
+                        <a class="collapse-item" href="{% url 're-vistas' %}">Vistias</a>
+                        <a class="collapse-item" href="{% url 're-usuarios' %}">Usuarios Activos</a>
+                        <a class="collapse-item" href="{% url 're-cursos' %}">Cursos</a>
+                        <a class="collapse-item" href="{% url 're-salones' %}">Salones</a>
                     </div>
                 </div>
             </li>
@@ -308,6 +310,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+    <script src="{% static 'js/reportes.js' %}"></script>
 
 
     </body>

@@ -1,0 +1,57 @@
+{% extends 'usuarios/nav-bars.html' %}
+{% block titulo %} <title>Reporte de Visitas</title> {% endblock %}
+
+{% block contenido %}
+
+    <div class ="row">
+        <div class ="col-sm-12">
+            <h1>Visitas</h1>
+        </div>
+    </div>
+     <div class ="row">
+        <div class ="col-sm-12">
+            <p id ="contenedor_tipo_boton">Reporte de:</p>
+        </div>
+    </div>
+    <br>
+    <div class ="row text-center">
+        <div class ="col-sm-6">
+            <div class ="row">
+                <div class ="col-ms-12">
+                    <p>Grafica</p>
+                </div>
+            </div>
+        </div>
+        <div class ="col-sm-6">
+            <div class ="row">
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id="hoy" value="hoy" onclick="dia_hoy('contenedor_tipo_boton')">Hoy</button>
+                </div>
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id ="semana" value="semana">Semana</button>
+                </div>
+            </div>
+            <br><br>
+            <div class ="row">
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id="mensual" value="mensual" onclick="mes('contenedor_tipo_boton')">Mensual</button>
+                </div>
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id ="anual" value="anual"onclick="year('contenedor_tipo_boton')">Anual</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class ="row">
+                <div class ="col-sm-12">
+                    <button class ="btn btn-primary buttons_reportes" onclick="rango('contenedor_tipo_boton')">Rango de Tiempo</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+</html>
