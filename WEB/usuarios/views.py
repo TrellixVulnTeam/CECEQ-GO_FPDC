@@ -2,30 +2,15 @@
 from django.shortcuts import render
 # Llamamos a los metodos por HHTPS
 from django.http import HttpResponse
-# Llamamos al modelo
 from django.contrib.auth import logout as do_logout
-from usuarios.models import Usuario
-from usuarios.models import UsuariosRegistrados
 from django.shortcuts import render, redirect
+# Llamamos las funciones de util
+from usuarios.util import *
 
 def perfil(request):
     if request.user.is_authenticated:
         return render(request, 'usuarios/perfil.html')
     return redirect('login')
-def get_non_registered_users():
-    users_r = UsuariosRegistrados.objects.all()
-    list_of_ids = []
-    for user_r in users_r:
-        list_of_ids.append(user_r.user_id)
-    return Usuario.objects.exclude(id_usuario__in=list_of_ids)
-
-def get_registered_users():
-    users_r = UsuariosRegistrados.objects.all()
-    list_of_ids = []
-    for user_r in users_r:
-        list_of_ids.append(user_r.user_id)
-    return Usuario.objects.filter(id_usuario__in=list_of_ids)
-
 
 def show_users(request):
     if request.user.is_authenticated:
@@ -36,3 +21,13 @@ def show_users(request):
     return redirect('login')
 def show_modal_user(request):
     return 0;
+def adduser(request):
+    if request.method == "POST":
+        name = request.POST.get('id-user-add')
+        add_user_in_database(name)
+    return redirect('usuarios')
+def eliuser(request):
+    if request.method == "POST":
+        name = request.POST.get('id-user-eli')
+        delete_user_in_database(name)
+    return redirect('usuarios')

@@ -2,53 +2,57 @@
 {% block titulo %} <title>Usuarios</title> {% endblock %}
 
 {% block contenido %}
-<br>
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#agregarusuario">
-                                    + Agregar Usuario
-                                </button>
+    <br>
+    <div class="row">
+        <div class="col-sm-12 text-right">
+            <p>
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#agregarusuario">
+                    + Agregar Usuario
+                </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="agregarusuario" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body text-center">
-                                                <br>
+
+                <!-- Modal -->
+                <div class="modal fade" id="agregarusuario" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <br>
                             <p>
                                 <h8>Selecciona al usuario que vas a agregar</h8>
                                 <br><br>
                                 {% for user in users_noR %}
                                     <button type="button" class="boton_modal" data-toggle="modal"
-                                            data-target="#confirmar" data-dismiss="modal" id="{{ user.id_usuario }}">
+                                            data-target="#confirmar{{ user.id_usuario }}" data-dismiss="modal">
                                         {{ user.nombre }}
                                     </button>
                                     <br><br>
                                 {% endfor %}
                             </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar
-                            </button>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            </p>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar
+            </button>
         </div>
 
-        <br><br><br>
-        <div class="modal" tabindex="-1" role="dialog" id="confirmar">
+        </div>
+        </div>
+        </div>
+        </p>
+        </div>
+
+    <br><br><br>
+    {% for user in users_noR %}
+        <div class="modal" tabindex="-1" role="dialog" id="confirmar{{ user.id_usuario }}">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -58,18 +62,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>¿Esta Seguro que va agregar a
-
-                            ?</p>
+                        <p>¿Esta Seguro que va agregar a {{ user.nombre }} ?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success">Aceptar</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar
-                        </button>
+                        <form action="addusr" method="post" >
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success" id ="id-add-user" name ="id-user-add" value = "{{ user.id_usuario }}">Aceptar</button>
+                        </form>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
         </div>
+    {% endfor %}
     </div>
     <!-- Page Heading -->
     <table class="table table-hover">
@@ -90,39 +95,62 @@
                 <th scope="row">{{ user.id_usuario }}</th>
                 <td> {{ user.nombre_usuario }}</td>
                 <td>{{ user.nombre }}</td>
-                 {% if user.status == 'Activo' %}
-               <td>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked>ON
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> OFF
-                        </label>
-                    </div>
-                </td>
+                {% if user.id_usuario|get_status == 'a' %}
+                    <td>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked>ON
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> OFF
+                            </label>
+                        </div>
+                    </td>
                 {% else %}
-                <td>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary ">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked>ON
-                        </label>
-                        <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> OFF
-                        </label>
-                    </div>
-                </td>
+                    <td>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary ">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked>ON
+                            </label>
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> OFF
+                            </label>
+                        </div>
+                    </td>
                 {% endif %}
-                <td></td>
+                <td>{{ user.id_usuario|get_fecha }}</td>
                 <td>
-                    <button type="button" class="btn btn-danger">Eliminar <i
-                            class="far fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarusuario{{ user.id_usuario }}" >Eliminar <i
+                                class="far fa-trash-alt"></i>
+                        </button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-warning">Modificar <i
-                            class="fas fa-pencil-alt"></i></button>
+                    <button type="button" class="btn btn-warning">Modificar <i class="fas fa-pencil-alt"></i></button>
                 </td>
             </tr>
+            <!--Modal para eliminar-->
+                 <div class="modal" tabindex="-1" role="dialog" id="eliminarusuario{{ user.id_usuario }}">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Confirmacion</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>¿Esta Seguro que va eliminar a {{ user.nombre}} ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="eliusr" method="post" >
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success" id ="id-add-user" name ="id-user-eli" value = "{{ user.id_usuario }}">Aceptar</button>
+                                    </form>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                 </div>
         {% endfor %}
         </tbody>
     </table>
