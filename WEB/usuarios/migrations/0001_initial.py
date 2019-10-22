@@ -38,4 +38,5 @@ class Migration(migrations.Migration):
                 'verbose_name': 'usuario',
             },
         ),
+
     ]

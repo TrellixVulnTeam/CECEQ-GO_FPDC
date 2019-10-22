@@ -20,3 +20,13 @@ class Usuario(models.Model):
     password = models.CharField(max_length=30)
     privilegios = models.CharField(max_length=32)
     status = models.CharField(max_length=20)
+
+
+class UsuariosAnonimos(models.Model):
+    class Meta:
+        verbose_name = "usuario_anonimo"
+    user_id = models.AutoField(primary_key=True) # Con este id se relaciona la id de la base del ceceq
+    estado = models.CharField(max_length=1, default = 'a') # Es un booleano, a - activado, d - desactivado
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+

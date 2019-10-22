@@ -11,7 +11,7 @@ urlpatterns = [
     # Despues se pondra el nombre en este caso login
     path('reporte-cursos/', views.cursos, name='re-cursos'),
     path('reporte-salones/', views.salones, name='re-salones'),
-    path('reporte-usuarios/', views.usuarios, name='re-usuarios'),
+    path('reporte-usuarios/', views.show_users, name='re-usuarios'),
     path('reporte-vistas/', views.visitas, name='re-vistas'),
 
 ]

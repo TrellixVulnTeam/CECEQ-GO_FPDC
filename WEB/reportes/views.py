@@ -1,9 +1,8 @@
 # Por defecto
-from django.shortcuts import render
 from django.shortcuts import render, redirect
-# LLamamos a los metodos por HHTPS
-from django.http import HttpResponse
+from reportes.util import *
 import datetime
+import time
 #URLS de Reportes
 
 def cursos(request):
@@ -26,6 +25,11 @@ def visitas(request):
         return render(request, 'reportes/visitas.html')
     return redirect('login')
 
-def dia_hoy(request):
-    hoy = datetime.date.today()
-    return render(request,hoy)
+
+def show_users(request):
+    if request.user.is_authenticated:
+        hoy = time.strftime("%I:%M:%S")
+        users_anon = get_anonimus_users()
+        args = {'title': 'CECEQ Reportes', 'users_anon': users_anon,'hoy':hoy}
+        return render(request, 'reportes/usuarios.html', args)
+    return redirect('login')

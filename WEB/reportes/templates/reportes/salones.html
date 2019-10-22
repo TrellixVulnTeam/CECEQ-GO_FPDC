@@ -25,23 +25,21 @@
                         <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Salon</th>
-                            <th>Clase</th>
+                            <th>Descripcion</th>
+                            <th>Ubicacion</th>
                         </tr>
                         </thead>
                         <tbody>
+
+                        {%  for a in b%}
                         <tr>
                             <th>F001</th>
                             <th>Salone1</th>
                             <th>Clase1</th>
                         </tr>
+                        {% endfor %}
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <th>F002</th>
-                            <th>Salone2</th>
-                            <th>clase2</th>
-                        </tr>
                         </tfoot>
                     </table>
                 </div>
