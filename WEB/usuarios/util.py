@@ -59,6 +59,15 @@ def delete_user_in_database(id):
     instance = UsuariosRegistrados.objects.get(id=id)
     instance.delete()
 
+def perma_activate_user_in_database(id):
+    instance = UsuariosRegistrados.objects.get(id=id)
+    instance.is_active = 1
+    instance.save()
+
+def perma_deactivate_user_in_database(id):
+    instance = UsuariosRegistrados.objects.get(id=id)
+    instance.is_active = 0
+    instance.save()
 
 
 

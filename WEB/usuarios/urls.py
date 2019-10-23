@@ -13,4 +13,6 @@ urlpatterns = [
     path('perfil', views.perfil, name='perfil'),
     path('addusr', views.adduser, name='addusr'),
     path('eliusr', views.eliuser, name='eliusr'),
+    path('actiusr', views.actiuser, name='actiusr'),
+    path('desusr', views.desuser, name='desusr'),
 ]
