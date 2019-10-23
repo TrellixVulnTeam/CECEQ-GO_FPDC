@@ -30,6 +30,7 @@ def usuarios(request):
 
 def visitas(request):
     if request.user.is_authenticated:
+        users_anon = get_anonimus_users()
         return render(request, 'reportes/visitas.html')
     return redirect('login')
 
