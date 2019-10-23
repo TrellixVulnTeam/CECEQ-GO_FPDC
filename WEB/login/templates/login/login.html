@@ -23,9 +23,15 @@
 <div class="limiter">
     <form class="login100-form validate-form" method="post">
         {% csrf_token %}
-					<span class="login100-form-title p-b-43">
-						Iniciar Sesion
-					</span>
+
+        <span class="login100-form-title p-b-43">
+            Iniciar Sesion
+        </span>
+        {% if error_message != "" %}
+            <div class="alert alert-danger">
+              <strong>Error: </strong> {{ error_message }}
+            </div>
+        {% endif %}
         <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
             <input class="input100" type="text" name="nombre_usuario" id = "nombre_usuario">
             <span class="focus-input100"></span>

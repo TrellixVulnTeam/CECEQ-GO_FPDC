@@ -11,8 +11,8 @@ class UsuariosRegistrados(models.Model):
 
     id = models.IntegerField(primary_key=True)  # Con este id se relaciona la id de la base del ceceq
     is_active = models.IntegerField(default=1)  # Es un entero donde 1 representa activo
-    date_joined = models.DateTimeField(default=timezone.now())  # Para saber cuando inicio en nuestro sistema
-    last_login = models.DateTimeField(default=timezone.now())
+    date_joined = models.DateTimeField(default=timezone.now)  # Para saber cuando inicio en nuestro sistema
+    last_login = models.DateTimeField(default=timezone.now)
     username = models.CharField(max_length=30, unique=True)
 
     @property

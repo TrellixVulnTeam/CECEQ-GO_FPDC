@@ -95,7 +95,7 @@
                 <th scope="row">{{ user.id_usuario }}</th>
                 <td> {{ user.nombre_usuario }}</td>
                 <td>{{ user.nombre }}</td>
-                {% if user.id_usuario|get_status == 'a' %}
+                {% if user.id_usuario|get_status == 1 %}
                     <td>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary active">

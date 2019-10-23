@@ -10,13 +10,13 @@ from django.http import HttpResponse
 from login.forms import LoginForm
 # Llamamos a la señal
 from django.core.signals import *
+from login.util import *
 
 
 def login(request):
+    error_message = ""
     if not request.user.is_authenticated:
-        print("el usuario esta autenticado")
         if request.method == "POST":
-            print("El método es POST")
             # Añadimos los datos recibidos al formulario
             form = LoginForm(request.POST)
             # Si el formulario es válido...
@@ -26,21 +26,25 @@ def login(request):
                 contrasena = form.cleaned_data['contrasena']
 
                 # Verificamos las credenciales del usuario
-                print(usuario)
-                print(contrasena)
-                user = authenticate(username=usuario, password=contrasena)
+                user = authenticate(request=request, username=usuario, password=contrasena)
                 # Si existe un usuario con ese nombre y contraseña
-                if user is not None:
+                error = get_error_login(request)
+                if error == 1:
+                    error_message = "Usuario y/o contraseña incorrectos"
+                elif error == 2:
+                    error_message = "No tiene permiso para entrar a este portal"
+                elif error == 3:
+                    error_message = "Su usuario se encuentra desactivado en el momento"
+                elif user is not None:
                     # Hacemos el login manualmente
-                    print("doing login...")
                     do_login(request, user)
-                    print("login completed")
                     # Y le redireccionamos a la portada
                     return redirect('board')
     else:
         return redirect('board')
     print("Redirect del login")
-    return render(request, "login/login.html", {'title': 'Inicio de Sesion'})
+    args = {'title': 'Inicio de Sesion', 'error_message':error_message}
+    return render(request, "login/login.html", args)
 
 
 def logout(request):
