@@ -7,12 +7,16 @@ import time
 
 def cursos(request):
     if request.user.is_authenticated:
-        return render(request, 'reportes/cursos.html')
+        eventos = get_cursos()
+        args = {'eventos':eventos}
+        return render(request, 'reportes/cursos.html',args)
     return redirect('login')
 
 def salones(request):
     if request.user.is_authenticated:
-        return render(request, 'reportes/salones.html')
+        cursos = get_espacios()
+        args = {'cursos': cursos}
+        return render(request, 'reportes/salones.html',args)
     return redirect('login')
 
 def usuarios(request):

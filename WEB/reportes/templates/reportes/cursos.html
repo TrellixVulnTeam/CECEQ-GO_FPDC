@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 <div class ="row">
         <div class ="col-sm-12">
-            <h1>Cursos</h1>
+            <h1>Cursos/Eventos</h1>
         </div>
     </div>
      <div class ="row">
@@ -15,60 +15,52 @@
             <p id ="contenedor_tipo_boton">Reporte de:</p>
         </div>
     </div>
+    <div class ="row">
+    <div class ="col-sm-12">
+            <div class ="row text-center">
+                <div class ="col-sm-3">
+                    <button class ="btn btn-primary buttons_reportes" id="hoy" value="hoy">Cursos hoy</button>
+                </div>
+                <div class ="col-sm-3">
+                    <button class ="btn btn-primary buttons_reportes" id ="semana" value="semana">Cursos en la Semana</button>
+                </div>
+                <div class ="col-sm-3">
+                    <button class ="btn btn-primary buttons_reportes" id="mensual" value="mensual" >Cursos en el mes</button>
+                </div>
+                <div class ="col-sm-3">
+                    <button class ="btn btn-primary buttons_reportes" id ="anual" value="anual">Cursos en el año</button>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
     <br>
     <div class ="row text-center">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="row">
                 <div class="container mb-3 mt-3">
                     <table class="table table-striped table-bordered" style="width:100%;" id="mydatatable2">
                         <thead>
                         <tr>
-                            <th>Nombre</th>
+                            <th>Ubicacion</th>
                             <th>Curso</th>
-                            <th>Hora</th>
+                            <th>Fecha</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th>F001</th>
-                            <th>Salone1</th>
-                            <th>Clase1</th>
-                        </tr>
+                        {% for evento in eventos %}
+                            <tr>
+                                <th>{{ evento.nom_evento }}</th>
+                                <th>{{ evento.nom_evento }}</th>
+                                <th>{{ evento.fecha_programacion }}</th>
+                            </tr>
+                        {% endfor %}
+
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <th>F002</th>
-                            <th>Salone2</th>
-                            <th>clase2</th>
-                        </tr>
                         </tfoot>
                     </table>
-                </div>
-            </div>
-        </div>
-        <div class ="col-sm-6">
-            <div class ="row">
-                <div class ="col-sm-6">
-                    <button class ="btn btn-primary buttons_reportes" id="hoy" value="hoy" onclick="">Cursos hoy</button>
-                </div>
-                <div class ="col-sm-6">
-                    <button class ="btn btn-primary buttons_reportes" id ="semana" value="semana">Cursos en la Semana</button>
-                </div>
-            </div>
-            <br><br>
-            <div class ="row">
-                <div class ="col-sm-6">
-                    <button class ="btn btn-primary buttons_reportes" id="mensual" value="mensual" onclick="mes('contenedor_tipo_boton','densityChart')">Cursos en el mes</button>
-                </div>
-                <div class ="col-sm-6">
-                    <button class ="btn btn-primary buttons_reportes" id ="anual" value="anual"onclick="year('contenedor_tipo_boton','densityChart')">Cursos en el año</button>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class ="row">
-                <div class ="col-sm-12">
-                    <button class ="btn btn-primary buttons_reportes" onclick="rango('contenedor_tipo_boton','densityChart')">Rango de Tiempo</button>
                 </div>
             </div>
         </div>
