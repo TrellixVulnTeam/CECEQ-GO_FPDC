@@ -36,7 +36,7 @@ class Usuario(models.Model):
 
 class UsuariosAnonimos(models.Model):
     class Meta:
-        verbose_name = "usuario_anonimo"
+        verbose_name = "usuario"
     user_id = models.AutoField(primary_key=True) # Con este id se relaciona la id de la base del ceceq
     estado = models.CharField(max_length=1, default = 'a') # Es un booleano, a - activado, d - desactivado
     created_at = models.DateTimeField(auto_now_add=True)
