@@ -8,25 +8,29 @@ def get_non_registered_users():
     users_r = UsuariosRegistrados.objects.all()
     list_of_ids = []
     for user_r in users_r:
-        list_of_ids.append(user_r.user_id)
+        list_of_ids.append(user_r.id)
     return Usuario.objects.exclude(id_usuario__in=list_of_ids)
+
+def get_username(id):
+    users_nr = Usuario.objects.filter(id_usuario=id)
+    return users_nr.first().nombre_usuario
 
 def get_registered_users():
     users_r = UsuariosRegistrados.objects.all()
     list_of_ids = []
     for user_r in users_r:
-        list_of_ids.append(user_r.user_id)
+        list_of_ids.append(user_r.id)
     return Usuario.objects.filter(id_usuario__in=list_of_ids)
 
 @register.filter(name='get_status')
 def get_status_single_user(id):
-    users_r = UsuariosRegistrados.objects.filter(user_id=id)
-    return users_r.first().estado
+    users_r = UsuariosRegistrados.objects.filter(id=id)
+    return users_r.first().is_active
 
 @register.filter(name='get_fecha')
 def get_date_single_user(id):
-    users_r = UsuariosRegistrados.objects.filter(user_id=id)
-    return users_r.first().fecha_inicio
+    users_r = UsuariosRegistrados.objects.filter(id=id)
+    return users_r.first().date_joined
 
 def get_status_registered_user():
     users_r = get_registered_users()
@@ -45,15 +49,13 @@ def get_add_user():
     if 'add_user' in request.session:
         return request.session['add_user']
     return None
-
-def add_user_in_database(id_new):
-    registro = UsuariosRegistrados(user_id = id_new)
+def add_user_in_database(id_new, username):
+    registro = UsuariosRegistrados(id=id_new, username=username)
     registro.save()
 
 def delete_user_in_database(id):
-    instance = UsuariosRegistrados.objects.get(user_id=id)
+    instance = UsuariosRegistrados.objects.get(id=id)
     instance.delete()
-
 
 
 
