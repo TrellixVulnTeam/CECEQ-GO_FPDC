@@ -32,7 +32,6 @@ class Usuario(models.Model):
     password = models.CharField(max_length=30)
     privilegios = models.CharField(max_length=32)
     status = models.CharField(max_length=20)
-<<<<<<< HEAD
 
 
 class UsuariosAnonimos(models.Model):
@@ -43,6 +42,3 @@ class UsuariosAnonimos(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
-=======
->>>>>>> fb8b47e9c75d6cd89c23c9862f57202c96a73baa
