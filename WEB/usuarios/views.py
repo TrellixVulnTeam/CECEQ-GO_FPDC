@@ -29,8 +29,9 @@ def show_modal_user(request):
 
 def adduser(request):
     if request.method == "POST":
-        name = request.POST.get('id-user-add')
-        add_user_in_database(name)
+        id = request.POST.get('id-user-add')
+        username = get_username(id);
+        add_user_in_database(id, username)
     return redirect('usuarios')
 
 
