@@ -35,6 +35,7 @@ def visitas(request):
     if request.user.is_authenticated:
         users_anon = get_anonimus_users_today()
         user_year = get_anonimus_users_year()
+        user_month = get_anonimus_users_mes()
         u1 = get_anonimus_users_1()
         u2 = get_anonimus_users_2()
         u3 = get_anonimus_users_3()
@@ -49,7 +50,8 @@ def visitas(request):
         u12 = get_anonimus_users_12()
 
         args = {'user_anon': users_anon, 'user_year': user_year, 'u1': u1, 'u2': u2, 'u3': u3, 'u4': u4, 'u5': u5,
-                'u6': u6, 'u7': u7, 'u8': u8, 'u9': u9, 'u10': u10, 'u11': u11, 'u12': u12}
+                'u6': u6, 'u7': u7, 'u8': u8, 'u9': u9, 'u10': u10, 'u11': u11, 'u12': u12, 'user_month': user_month,
+                }
         return render(request, 'reportes/visitas.html', args)
     return redirect('login')
 
@@ -79,7 +81,7 @@ def reporte_usuarios_hoy(request):
         c.drawString(480, 750, hoy)
         c.drawString(480, 735, hora)
         c.line(460, 747, 560, 747)
-        c.drawString(30, 700, 'El numero de usuarios hoy ha sido de:'+ str(users_anon))
+        c.drawString(30, 700, 'El numero de usuarios hoy ha sido de:' + str(users_anon))
 
         c.save()
         pdf = buffer.getvalue()

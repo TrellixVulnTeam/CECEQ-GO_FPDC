@@ -10,7 +10,7 @@ urlpatterns = [
     # Se pone el nombre views seguido de un nombre que se le dara
     # Despues se pondra el nombre en este caso login
     path('', views.show_users, name='usuarios'),
-    path('perfil', views.perfil, name='perfil'),
+
     path('addusr', views.adduser, name='addusr'),
     path('eliusr', views.eliuser, name='eliusr'),
 ]

@@ -2,8 +2,164 @@
 {% block titulo %} <title>Reporte de Salones</title> {% endblock %}
 
 {% block contenido %}
+    {{ user_anon }}
+    <div class ="row">
+        <div class ="col-sm-12">
+            <h1>Salones</h1>
+        </div>
+    </div>
+     <div class ="row">
+        <div class ="col-sm-12">
+            <p id ="contenedor_tipo_boton">Reporte de:</p>
+        </div>
+    </div>
+    <br>
+    <div class ="row text-center">
+        <div class ="col-sm-6">
+            <div class ="row">
+                <canvas id="densityChart" width="100%" height="80%"></canvas>
+
+            </div>
+        </div>
+        <div class ="col-sm-6">
+            <div class ="row">
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id="hoy" value="hoy" onclick="dia_hoy('contenedor_tipo_boton','densityChart')">Hoy</button>
+                </div>
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id ="semana" value="semana">Semana</button>
+                </div>
+            </div>
+            <br><br>
+            <div class ="row">
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id="mensual" value="mensual" onclick="mes('contenedor_tipo_boton','densityChart')">Mensual</button>
+                </div>
+                <div class ="col-sm-6">
+                    <button class ="btn btn-primary buttons_reportes" id ="anual" value="anual"onclick="year('contenedor_tipo_boton','densityChart')">Anual</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class ="row">
+                <div class ="col-sm-12">
+                    <button class ="btn btn-primary buttons_reportes" onclick="rango('contenedor_tipo_boton','densityChart')">Rango de Tiempo</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Se tuvo que dejar el JS aqui dado que no se puede usar static en los archivos .js -->
+<script>
+
+function dia_hoy(id,id2){
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = dd + '/' + mm + '/' + yyyy;
+    document.getElementById('densityChart').innerHTML = '';
+    document.getElementById(id).innerHTML = 'Reporte de Hoy: ' + today + ' <br><br><a href ="{% url 'reporte-hoy' %}"><button class ="btn btn-primary" id ="hoy1">Descargar</button></a>';
+    var speedCanvas = document.getElementById("densityChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var speedData = {
+      labels: ["8:00 Am", "10:00 Am", "12:00pm", "2:00pm", "4:00pm", "6:00pm", "8:00pm"],
+      datasets: [{
+        label: "Visitas Hoy",
+        data: [{{ user_anon }}, 59, 75, 20, 20, 55, 40],
+      }]
+    };
+
+    var chartOptions = {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          boxWidth: 80,
+          fontColor: 'black'
+        }
+      }
+    };
+
+    var lineChart = new Chart(speedCanvas, {
+      type: 'line',
+      data: speedData,
+      options: chartOptions
+    });
+}
+
+function mes(id,id2){
+    var monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+      "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+    var d = new Date();
+    document.getElementById(id).innerHTML = "Reporte del Mes: " + monthNames[d.getMonth()]+ '<br><br><a href ="{% url 'reporte-mes' %}"><button class ="btn btn-primary" id="mes1" >Descargar</button></a>';
+    var densityCanvas1 = document.getElementById("densityChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var densityData1 = {
+      label: 'Visitas en el mes de ' + monthNames[d.getMonth()],
+      data: [100, 120, 130, 98]
+    };
+
+    var barChart1 = new Chart(densityCanvas1, {
+      type: 'bar',
+      data: {
+        labels: ["Semana 1", "semana 2", "Semana 3", "Semana 4"],
+        datasets: [densityData1]
+      }
+    });
+}
 
 
+function year(id,id2){
+    var today = new Date();
+    var yyyy = today.getFullYear();
+
+    today = yyyy;
+    document.getElementById('densityChart').innerHTML = '';
+    document.getElementById(id).innerHTML = 'Reporte del año: ' + today + ' <br><br><a href ="{% url 'reporte-anio' %}"><button class ="btn btn-primary" id="año1">Descargar</button></a>';
+    var densityCanvas2 = document.getElementById("densityChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var densityData2 = {
+      label: {{ user_year }},
+      data: [{{u1}}, {{u2}}, {{u3}}, {{u4}}, {{u5}}, {{u6}}, {{u7}}, {{u8}},{{u9}},{{u10}},{{u11}},{{u12}}]
+    };
+
+    var barChart2 = new Chart(densityCanvas2, {
+      type: 'bar',
+      data: {
+        labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        datasets: [densityData2]
+      }
+    });
+
+
+
+}
+
+
+function rango(id,id2){
+    document.getElementById(id).innerHTML = 'Reporte de: <input type ="date" class ="date_label">  a  <input type ="date" class ="date_label">' + '<br><br><button class ="btn btn-primary" id="rango1">Descargar</button>';
+}
+
+    var fecha = new Date();
+    hora = fecha.getHours()+":"+fecha.getMinutes();
+    document.getElementById('hora').innerHTML ='Reporte de Usuarios activos a las: ' + hora;
+
+
+
+</script>
 
 {% endblock %}
 </html>

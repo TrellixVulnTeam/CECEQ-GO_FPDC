@@ -7,13 +7,6 @@ from django.shortcuts import render, redirect
 # Llamamos las funciones de util
 from usuarios.util import *
 
-
-def perfil(request):
-    if request.user.is_authenticated:
-        return render(request, 'usuarios/perfil.html')
-    return redirect('login')
-
-
 def show_users(request):
     if request.user.is_authenticated:
         users = get_registered_users()

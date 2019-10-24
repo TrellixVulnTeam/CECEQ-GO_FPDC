@@ -2,7 +2,8 @@
 {% block titulo %} <title>Reporte de Visitas</title> {% endblock %}
 
 {% block contenido %}
-    {{ user_anon }}
+
+    {{ semana1 }}
     <div class ="row">
         <div class ="col-sm-12">
             <h1>Visitas</h1>
@@ -68,10 +69,10 @@ function dia_hoy(id,id2){
     Chart.defaults.global.defaultFontSize = 18;
 
     var speedData = {
-      labels: ["8:00 Am", "10:00 Am", "12:00pm", "2:00pm", "4:00pm", "6:00pm", "8:00pm"],
+      labels: ["General"],
       datasets: [{
         label: "Visitas Hoy",
-        data: [{{ user_anon }}, 59, 75, 20, 20, 55, 40],
+        data: [{{ user_anon }}],
       }]
     };
 
@@ -106,13 +107,13 @@ function mes(id,id2){
 
     var densityData1 = {
       label: 'Visitas en el mes de ' + monthNames[d.getMonth()],
-      data: [100, 120, 130, 98]
+      data: [{{ user_month }}]
     };
 
     var barChart1 = new Chart(densityCanvas1, {
       type: 'bar',
       data: {
-        labels: ["Semana 1", "semana 2", "Semana 3", "Semana 4"],
+        labels: ["General"],
         datasets: [densityData1]
       }
     });
