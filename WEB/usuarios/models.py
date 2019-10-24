@@ -38,16 +38,5 @@ class UsuariosAnonimos(models.Model):
     class Meta:
         verbose_name = "usuario"
     user_id = models.AutoField(primary_key=True) # Con este id se relaciona la id de la base del ceceq
-    estado = models.CharField(max_length=1, default = '1') # Es un booleano, a - activado, d - desactivado
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-class MobileSessions(models.Model):
     numberofsessions = models.IntegerField(db_column='numberOfSessions')  # Field name made lowercase.
     time = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'mobile_Sessions'
-
-

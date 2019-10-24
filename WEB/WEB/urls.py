@@ -13,4 +13,5 @@ urlpatterns = [
     path('dashboard/', include('board.urls')),
     path('mapas/', include('mapas.urls')),
     path('reportes/', include('reportes.urls')),
+    path('instalaciones/', include('instalaciones.urls')),
 ]

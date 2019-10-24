@@ -2,7 +2,7 @@
 {% block titulo %} <title>Reporte de Visitas</title> {% endblock %}
 
 {% block contenido %}
-
+    {{ user_anon }}
     <div class ="row">
         <div class ="col-sm-12">
             <h1>Visitas</h1>
@@ -71,7 +71,7 @@ function dia_hoy(id,id2){
       labels: ["8:00 Am", "10:00 Am", "12:00pm", "2:00pm", "4:00pm", "6:00pm", "8:00pm"],
       datasets: [{
         label: "Visitas Hoy",
-        data: [0, 59, 75, 20, 20, 55, 40],
+        data: [{{ user_anon }}, 59, 75, 20, 20, 55, 40],
       }]
     };
 
@@ -132,7 +132,7 @@ function year(id,id2){
     Chart.defaults.global.defaultFontSize = 18;
 
     var densityData2 = {
-      label: today,
+      label: {{ user_year }},
       data: [1200, 1322, 988, 1002, 1203, 1021, 1232, 2001,1952,2123,1222,992]
     };
 

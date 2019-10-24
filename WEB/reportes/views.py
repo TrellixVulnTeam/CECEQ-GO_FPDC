@@ -18,9 +18,8 @@ def cursos(request):
 
 def salones(request):
     if request.user.is_authenticated:
-        cursos = get_espacios()
-        args = {'cursos': cursos}
-        return render(request, 'reportes/salones.html',args)
+
+        return render(request, 'reportes/salones.html')
     return redirect('login')
 
 def usuarios(request):
@@ -30,8 +29,10 @@ def usuarios(request):
 
 def visitas(request):
     if request.user.is_authenticated:
-        users_anon = get_anonimus_users()
-        return render(request, 'reportes/visitas.html')
+        users_anon = get_anonimus_users_today()
+        user_year = get_anonimus_users_year()
+        args = {'user_anon':users_anon,'user_year':user_year}
+        return render(request, 'reportes/visitas.html',args)
     return redirect('login')
 
 
