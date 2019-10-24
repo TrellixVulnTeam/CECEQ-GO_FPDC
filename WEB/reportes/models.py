@@ -31,6 +31,37 @@ class Eventos(models.Model):
     id_capturista = models.IntegerField(blank=True, null=True)
     costo = models.FloatField(blank=True, null=True)
 
+class Eventoss(models.Model):
+    class Meta:
+        verbose_name = "usuario_externo"
+        managed = False
+        db_table = 'subeventos'
+    id_subevento = models.CharField(max_length=16, blank=True, null=True)
+    des_subevento = models.CharField(max_length=150, blank=True, null=True)
+    id_responsable = models.IntegerField(blank=True, null=True)
+    observaciones = models.TextField(blank=True, null=True)
+    fecha = models.DateField(blank=True, null=True)
+    horainicial = models.DateTimeField(blank=True, null=True)
+    horafinal = models.DateTimeField(blank=True, null=True)
+    id_espacio = models.IntegerField(blank=True, null=True)
+    id_evento = models.IntegerField(blank=True, null=True)
+    id_corresponsable1 = models.IntegerField(blank=True, null=True)
+    id_corresponsable2 = models.IntegerField(blank=True, null=True)
+    tipo_estadistico = models.IntegerField(blank=True, null=True)
+    aire = models.CharField(max_length=1, blank=True, null=True)
+    no_personas = models.IntegerField(blank=True, null=True)
+    estatus = models.CharField(max_length=1, blank=True, null=True)
+    costo = models.FloatField(blank=True, null=True)
+    id_entidad = models.IntegerField(blank=True, null=True)
+    estatus_estadistico = models.CharField(max_length=1, blank=True, null=True)
+    clave = models.BigAutoField(primary_key=True)
+    recepcion = models.CharField(max_length=1, blank=True, null=True)
+    no_publicar = models.CharField(max_length=1)
+    gratuito = models.CharField(max_length=1)
+    num_mujeres = models.IntegerField()
+    num_hombres = models.IntegerField()
+    relevante = models.IntegerField()
+
 
 
 

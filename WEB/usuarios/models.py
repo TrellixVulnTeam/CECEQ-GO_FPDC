@@ -42,3 +42,12 @@ class UsuariosAnonimos(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+class MobileSessions(models.Model):
+    numberofsessions = models.IntegerField(db_column='numberOfSessions')  # Field name made lowercase.
+    time = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'mobile_Sessions'
+
+

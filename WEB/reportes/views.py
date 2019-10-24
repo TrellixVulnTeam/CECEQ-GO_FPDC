@@ -61,6 +61,7 @@ def reporte_usuarios_hoy(request):
         c.drawString(480, 735, hora)
         c.line(460,747,560,747)
         c.drawString(30,700,'El numero de usuarios hoy ha sido de:')
+
         c.save()
         pdf = buffer.getvalue()
         buffer.close()
