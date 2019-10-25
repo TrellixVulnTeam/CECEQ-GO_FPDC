@@ -6,6 +6,7 @@ from django.contrib.auth import logout as do_logout
 from django.shortcuts import render, redirect
 # Llamamos las funciones de util
 from usuarios.util import *
+from board.util import set_error_user
 
 def perfil(request):
     if request.user.is_authenticated:
@@ -24,7 +25,7 @@ def show_users(request):
                 args = {'title': 'CECEQ USUARIOS', 'users': users, 'users_noR': users_noR}
                 return render(request, 'usuarios/usuarios.html', args)
             else:
-
+                set_error_user(request, 1)
                 return redirect('board')
         else:
             return redirect('logout')
