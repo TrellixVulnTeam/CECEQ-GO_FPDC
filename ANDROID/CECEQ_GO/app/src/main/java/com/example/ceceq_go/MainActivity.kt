@@ -4,6 +4,8 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.Gravity
+import android.widget.Toast
 import com.mapbox.android.core.location.LocationEngine
 import com.mapbox.android.core.location.LocationEngineListener
 import com.mapbox.android.core.location.LocationEnginePriority
@@ -18,6 +20,10 @@ import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.CameraMode
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.RenderMode
+import com.mancj.materialsearchbar.MaterialSearchBar
+import com.mapbox.mapboxsdk.constants.Style
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
+
 
 class MainActivity : AppCompatActivity(),PermissionsListener,LocationEngineListener {
     //Variable for the map
@@ -31,6 +37,10 @@ class MainActivity : AppCompatActivity(),PermissionsListener,LocationEngineListe
     //Variable to UI to represent the user current location
     private var locationEngine:LocationEngine?=null
     private var locationLayerPlugin: LocationLayerPlugin?=null
+    //Variables for SearchBar
+
+    //Variables for SlidingUpPanel
+    private lateinit var slidingUpLayout: SlidingUpPanelLayout
 
 
 
@@ -49,7 +59,18 @@ class MainActivity : AppCompatActivity(),PermissionsListener,LocationEngineListe
         mapView.getMapAsync{mapboxMap->
             map=mapboxMap
             enableLocation()
+            mapboxMap.setStyle(Style.MAPBOX_STREETS) {
+
+                // Map is set up and the style has loaded. Now you can add data or make other map adjustments
+
+
+
+            }
         }
+
+        //SlidingUpPanel
+        //slidingUpLayout=findViewById(R.id.slideUpPanel_all)
+
     }
 
     //Function to ask for user's location permissions
@@ -85,7 +106,7 @@ class MainActivity : AppCompatActivity(),PermissionsListener,LocationEngineListe
         locationLayerPlugin= LocationLayerPlugin(mapView,map,locationEngine)
         locationLayerPlugin?.setLocationLayerEnabled(true)
         locationLayerPlugin?.cameraMode=CameraMode.TRACKING
-        locationLayerPlugin?.renderMode=RenderMode.NORMAL
+        locationLayerPlugin?.renderMode=RenderMode.COMPASS
     }
 
     //Function to move the camera to new position
@@ -98,6 +119,10 @@ class MainActivity : AppCompatActivity(),PermissionsListener,LocationEngineListe
     //Function used when users denies permission for first time
     override fun onExplanationNeeded(permissionsToExplain: MutableList<String>?) {
         //Present a toast or a dialog why they need to grant access
+        //val locationToast = Toast.makeText(applicationContext,"CECEQ GO requiere de los permisos de ubicación para continuar.",Toast.LENGTH_SHORT)
+        //locationToast.setGravity(Gravity.LEFT,200,200)
+        //locationToast.show()
+        //enableLocation()
     }
 
     override fun onPermissionResult(granted: Boolean) {
@@ -174,5 +199,4 @@ class MainActivity : AppCompatActivity(),PermissionsListener,LocationEngineListe
         mapView.onLowMemory()
     }
     //Override lifecycle methods
-
 }
