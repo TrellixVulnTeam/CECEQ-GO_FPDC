@@ -8,6 +8,7 @@ from django.utils.timezone import make_naive
 
 from usuarios.models import Usuario
 from usuarios.models import UsuariosRegistrados
+from background_task.models import Task
 # Llamamos a los tags para poder registrar los filtros
 from django.template.defaulttags import register
 
@@ -65,6 +66,9 @@ def delete_user_in_database(id):
     instance.delete()
 
 def perma_activate_user_in_database(id):
+    if Task.objects.filter(verbose_name=id).exists():
+        instance = Task.objects.get(verbose_name=id)
+        instance.delete()
     instance = UsuariosRegistrados.objects.get(id=id)
     instance.is_active = 1
     instance.save()
@@ -80,21 +84,21 @@ def perma_deactivate_user_in_database(id, opcion):
     instance.is_active = 0
     instance.save()
     if opcion == "2":
-        t1 = timezone.localtime() + timezone.timedelta(minutes=3)
-        t1 -= make_naive(t1, timezone=timezone.utc)-make_naive(t1)
-        temp_activate_user_in_database(id, schedule=t1)
+        t1 = timezone.localtime() + timezone.timedelta(days=3)
+        #t1 -= make_naive(t1, timezone=timezone.utc)-make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
     elif opcion == "3":
-        t1 = timezone.localtime() + timezone.timedelta(minutes=7)
-        t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
-        temp_activate_user_in_database(id, schedule=t1)
+        t1 = timezone.localtime() + timezone.timedelta(days=7)
+        #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
     elif opcion == "4":
-        t1 = timezone.localtime() + timezone.timedelta(minutes=15)
-        t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
-        temp_activate_user_in_database(id, schedule=t1)
+        t1 = timezone.localtime() + timezone.timedelta(days=15)
+        #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
     elif opcion == "5":
-        t1 = timezone.localtime() + timezone.timedelta(minutes=30)
-        t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
-        temp_activate_user_in_database(id, schedule=t1)
+        t1 = timezone.localtime() + timezone.timedelta(days=30)
+        #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
 
 #Filters created in order to properly call functions from the template
 
