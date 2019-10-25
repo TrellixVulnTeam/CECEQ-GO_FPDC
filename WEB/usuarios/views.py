@@ -7,25 +7,28 @@ from django.shortcuts import render, redirect
 # Llamamos las funciones de util
 from usuarios.util import *
 
-
 def perfil(request):
     if request.user.is_authenticated:
-        return render(request, 'usuarios/perfil.html')
+        if request.user.is_active:
+            return render(request, 'usuarios/perfil.html')
+        else:
+            return redirect('logout')
     return redirect('login')
-
 
 def show_users(request):
     if request.user.is_authenticated:
-        users = get_registered_users()
-        users_noR = get_non_registered_users()
-        args = {'title': 'CECEQ USUARIOS', 'users': users, 'users_noR': users_noR}
-        return render(request, 'usuarios/usuarios.html', args)
+        if request.user.is_active:
+            if request.user.tiene_permiso("ver usuarios"):
+                users = get_registered_users()
+                users_noR = get_non_registered_users()
+                args = {'title': 'CECEQ USUARIOS', 'users': users, 'users_noR': users_noR}
+                return render(request, 'usuarios/usuarios.html', args)
+            else:
+
+                return redirect('board')
+        else:
+            return redirect('logout')
     return redirect('login')
-
-
-def show_modal_user(request):
-    return 0;
-
 
 def adduser(request):
     if request.method == "POST":

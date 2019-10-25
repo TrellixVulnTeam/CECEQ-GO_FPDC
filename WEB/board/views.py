@@ -10,4 +10,4 @@ def dash(request):
         users_anon = get_anonimus_users()
         args= {'users_anon':users_anon}
         return render(request,'board/dashboard.html',args)
-    return redirect('login')
+    return redirect('/')
