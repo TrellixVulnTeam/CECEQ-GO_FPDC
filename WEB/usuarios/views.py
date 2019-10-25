@@ -34,9 +34,21 @@ def adduser(request):
         add_user_in_database(id, username)
     return redirect('usuarios')
 
-
 def eliuser(request):
     if request.method == "POST":
-        name = request.POST.get('id-user-eli')
-        delete_user_in_database(name)
+        id = request.POST.get('id-user-eli')
+        delete_user_in_database(id)
+    return redirect('usuarios')
+
+def actiuser(request):
+    if request.method == "POST":
+        id = request.POST.get('id-user-acti')
+        perma_activate_user_in_database(id)
+    return redirect('usuarios')
+
+def desuser(request):
+    if request.method == "POST":
+        id = request.POST.get('id-user-des')
+        opcion = request.POST.get('opcion-desactivar')
+        perma_deactivate_user_in_database(id, opcion)
     return redirect('usuarios')

@@ -1,4 +1,5 @@
 {% extends 'usuarios/nav-bars.html' %}
+{% load static %}
 {% block titulo %} <title>Usuarios</title> {% endblock %}
 
 {% block contenido %}
@@ -100,23 +101,23 @@
                 {% if user.id_usuario|get_status == 1 %}
                     <td>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked>ON
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> OFF
-                            </label>
+                            <buttton type="button" class="btn btn-success">
+                                ON
+                            </buttton>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#desactivarusuario{{ user.id_usuario }}">
+                                OFF
+                            </button>
                         </div>
                     </td>
                 {% else %}
                     <td>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary ">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked>ON
-                            </label>
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> OFF
-                            </label>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#activarusuario{{ user.id_usuario }}">
+                                ON
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                OFF
+                            </button>
                         </div>
                     </td>
                 {% endif %}
@@ -156,6 +157,59 @@
                     </div>
                 </div>
             </div>
+            <!--Modal para Activar-->
+             <div class="modal" tabindex="-1" role="dialog" id="activarusuario{{ user.id_usuario }}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Confirmacion</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>¿Esta Seguro que va activar a {{ user.nombre}} ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="actiusr" method="post" >
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-success" id ="id-act-user" name ="id-user-acti" value = "{{ user.id_usuario }}">Aceptar</button>
+                                </form>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+            <!--Modal para Desactivar-->
+             <div class="modal" tabindex="-1" role="dialog" id="desactivarusuario{{ user.id_usuario }}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Confirmacion</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>¿Esta Seguro que va desactivar a {{ user.nombre}} ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="desusr" method="post" >
+                                    {% csrf_token %}
+                                    <select class="custom-select" id="opcion-desactivar" name="opcion-desactivar">
+                                      <option value="1">Indefinidamente</option>
+                                      <option value="2">Por 3 días</option>
+                                      <option value="3">Por 7 días</option>
+                                      <option value="4">Por 15 días</option>
+                                      <option value="5">Por 30 días</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-success" id ="id-des-user" name ="id-user-des" value = "{{ user.id_usuario }}">Aceptar</button>
+                                </form>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+             </div>
         {% endfor %}
         </tbody>
     </table>

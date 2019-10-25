@@ -19,6 +19,9 @@ class UsuariosRegistrados(models.Model):
     def is_authenticated(self):
         return True
 
+    def tiene_permiso(self, permiso):
+        
+
 
 class Usuario(models.Model):
     class Meta:
