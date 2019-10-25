@@ -9,16 +9,18 @@ from usuarios.util import *
 
 def show_users(request):
     if request.user.is_authenticated:
-        users = get_registered_users()
-        users_noR = get_non_registered_users()
-        args = {'title': 'CECEQ USUARIOS', 'users': users, 'users_noR': users_noR}
-        return render(request, 'usuarios/usuarios.html', args)
+        if request.user.is_active:
+            if request.user.tiene_permiso("ver usuarios"):
+                users = get_registered_users()
+                users_noR = get_non_registered_users()
+                args = {'title': 'CECEQ USUARIOS', 'users': users, 'users_noR': users_noR}
+                return render(request, 'usuarios/usuarios.html', args)
+            else:
+
+                return redirect('board')
+        else:
+            return redirect('logout')
     return redirect('login')
-
-
-def show_modal_user(request):
-    return 0;
-
 
 def adduser(request):
     if request.method == "POST":
@@ -27,9 +29,21 @@ def adduser(request):
         add_user_in_database(id, username)
     return redirect('usuarios')
 
-
 def eliuser(request):
     if request.method == "POST":
-        name = request.POST.get('id-user-eli')
-        delete_user_in_database(name)
+        id = request.POST.get('id-user-eli')
+        delete_user_in_database(id)
+    return redirect('usuarios')
+
+def actiuser(request):
+    if request.method == "POST":
+        id = request.POST.get('id-user-acti')
+        perma_activate_user_in_database(id)
+    return redirect('usuarios')
+
+def desuser(request):
+    if request.method == "POST":
+        id = request.POST.get('id-user-des')
+        opcion = request.POST.get('opcion-desactivar')
+        perma_deactivate_user_in_database(id, opcion)
     return redirect('usuarios')

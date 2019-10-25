@@ -12,4 +12,4 @@ def dash(request):
         users_year = get_anonimus_users_year()
         args= {'users_anon':users_anon,'users_month':users_month,'users_year':users_year}
         return render(request,'board/dashboard.html',args)
-    return redirect('login')
+    return redirect('/')

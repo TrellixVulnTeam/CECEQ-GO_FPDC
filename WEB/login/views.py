@@ -42,7 +42,6 @@ def login(request):
                     return redirect('board')
     else:
         return redirect('board')
-    print("Redirect del login")
     args = {'title': 'Inicio de Sesion', 'error_message':error_message}
     return render(request, "login/login.html", args)
 
@@ -51,4 +50,4 @@ def logout(request):
     # Finalizamos la sesión
     do_logout(request)
     # Redireccionamos a la portada
-    return redirect('/')
+    return redirect('login')

@@ -5,19 +5,42 @@ from django.utils import timezone
 
 # Los demas datos los vamos a jalar de la base de datos de CECEQ
 
+class Roles(models.Model):
+    id = models.IntegerField(primary_key=True)
+    nombre = models.CharField(max_length=50, unique=True)
+
+class Permisos(models.Model):
+    id = models.IntegerField(primary_key=True)
+    nombre = models.CharField(max_length=50, unique=True)
+
+class PermisosRoles(models.Model):
+    id = models.IntegerField(primary_key=True)
+    id_permiso = models.ForeignKey(Permisos, on_delete=models.CASCADE)
+    id_rol = models.ForeignKey(Roles, on_delete=models.CASCADE)
+
 class UsuariosRegistrados(models.Model):
     class Meta:
         verbose_name = "usuario"
-
     id = models.IntegerField(primary_key=True)  # Con este id se relaciona la id de la base del ceceq
     is_active = models.IntegerField(default=1)  # Es un entero donde 1 representa activo
     date_joined = models.DateTimeField(default=timezone.now)  # Para saber cuando inicio en nuestro sistema
     last_login = models.DateTimeField(default=timezone.now)
     username = models.CharField(max_length=30, unique=True)
+    rol = models.ForeignKey(Roles, on_delete=models.CASCADE, default=1)
 
     @property
     def is_authenticated(self):
         return True
+
+    def tiene_permiso(self, permiso):
+        if Permisos.objects.filter(nombre=permiso).exists():
+            instance = Permisos.objects.get(nombre=permiso)
+            id_permiso = instance.id
+            id_rol = self.rol.id
+            if PermisosRoles.objects.filter(id_rol=id_rol, id_permiso=id_permiso).exists():
+                return True
+            return False
+        return False
 
 
 class Usuario(models.Model):
