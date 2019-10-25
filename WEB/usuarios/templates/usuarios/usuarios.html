@@ -1,4 +1,5 @@
 {% extends 'usuarios/nav-bars.html' %}
+{% load static %}
 {% block titulo %} <title>Usuarios</title> {% endblock %}
 
 {% block contenido %}
@@ -144,7 +145,7 @@
                                 <div class="modal-footer">
                                     <form action="eliusr" method="post" >
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-success" id ="id-add-user" name ="id-user-eli" value = "{{ user.id_usuario }}">Aceptar</button>
+                                        <button type="submit" class="btn btn-success" id ="id-eli-user" name ="id-user-eli" value = "{{ user.id_usuario }}">Aceptar</button>
                                     </form>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -167,7 +168,7 @@
                                 <div class="modal-footer">
                                     <form action="actiusr" method="post" >
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-success" id ="id-add-user" name ="id-user-acti" value = "{{ user.id_usuario }}">Aceptar</button>
+                                        <button type="submit" class="btn btn-success" id ="id-act-user" name ="id-user-acti" value = "{{ user.id_usuario }}">Aceptar</button>
                                     </form>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -190,7 +191,14 @@
                                 <div class="modal-footer">
                                     <form action="desusr" method="post" >
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-success" id ="id-add-user" name ="id-user-des" value = "{{ user.id_usuario }}">Aceptar</button>
+                                        <select class="custom-select" id="opcion-desactivar" name="opcion-desactivar">
+                                          <option value="1">Indefinidamente</option>
+                                          <option value="2">Por 3 días</option>
+                                          <option value="3">Por 7 días</option>
+                                          <option value="4">Por 15 días</option>
+                                          <option value="5">Por 30 días</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-success" id ="id-des-user" name ="id-user-des" value = "{{ user.id_usuario }}">Aceptar</button>
                                     </form>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                                 </div>

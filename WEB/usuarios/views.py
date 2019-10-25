@@ -49,5 +49,6 @@ def actiuser(request):
 def desuser(request):
     if request.method == "POST":
         id = request.POST.get('id-user-des')
-        perma_deactivate_user_in_database(id)
+        opcion = request.POST.get('opcion-desactivar')
+        perma_deactivate_user_in_database(id, opcion)
     return redirect('usuarios')

@@ -1,6 +1,11 @@
 # Llamamos al modelo
 from urllib import request
 
+from background_task import background
+
+from django.utils import timezone
+from django.utils.timezone import make_naive
+
 from usuarios.models import Usuario
 from usuarios.models import UsuariosRegistrados
 # Llamamos a los tags para poder registrar los filtros
@@ -64,12 +69,32 @@ def perma_activate_user_in_database(id):
     instance.is_active = 1
     instance.save()
 
-def perma_deactivate_user_in_database(id):
+@background(schedule=60)
+def temp_activate_user_in_database(id):
+    instance = UsuariosRegistrados.objects.get(id=id)
+    instance.is_active = 1
+    instance.save()
+
+def perma_deactivate_user_in_database(id, opcion):
     instance = UsuariosRegistrados.objects.get(id=id)
     instance.is_active = 0
     instance.save()
-
-
+    if opcion == "2":
+        t1 = timezone.localtime() + timezone.timedelta(minutes=3)
+        t1 -= make_naive(t1, timezone=timezone.utc)-make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1)
+    elif opcion == "3":
+        t1 = timezone.localtime() + timezone.timedelta(minutes=7)
+        t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1)
+    elif opcion == "4":
+        t1 = timezone.localtime() + timezone.timedelta(minutes=15)
+        t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1)
+    elif opcion == "5":
+        t1 = timezone.localtime() + timezone.timedelta(minutes=30)
+        t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
+        temp_activate_user_in_database(id, schedule=t1)
 
 #Filters created in order to properly call functions from the template
 
