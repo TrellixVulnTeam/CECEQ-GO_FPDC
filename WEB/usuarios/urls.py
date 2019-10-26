@@ -15,4 +15,5 @@ urlpatterns = [
     path('eliusr', views.eliuser, name='eliusr'),
     path('actiusr', views.actiuser, name='actiusr'),
     path('desusr', views.desuser, name='desusr'),
+    path('modusr', views.moduser, name='modusr'),
 ]

@@ -8,6 +8,7 @@ from django.utils.timezone import make_naive
 
 from usuarios.models import Usuario
 from usuarios.models import UsuariosRegistrados
+from usuarios.models import Roles
 from background_task.models import Task
 # Llamamos a los tags para poder registrar los filtros
 from django.template.defaulttags import register
@@ -99,6 +100,19 @@ def perma_deactivate_user_in_database(id, opcion):
         t1 = timezone.localtime() + timezone.timedelta(days=30)
         #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
         temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
+
+def modificar_rol_usuario(id, rol):
+    if id == "1":
+        id_r = 1
+    elif id == "2":
+        id_r = 2
+    elif id == "3":
+        id_r = 3
+    instance = UsuariosRegistrados.objects.get(id=id_r)
+    instance_rol = Roles.objects.get(id=rol)
+    instance.rol = instance_rol
+    instance.save()
+
 
 #Filters created in order to properly call functions from the template
 

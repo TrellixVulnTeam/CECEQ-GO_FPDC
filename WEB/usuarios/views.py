@@ -33,26 +33,48 @@ def show_users(request):
 
 def adduser(request):
     if request.method == "POST":
-        id = request.POST.get('id-user-add')
-        username = get_username(id);
-        add_user_in_database(id, username)
+        if request.user.is_authenticated:
+            if request.user.is_active:
+                if request.user.tiene_permiso("agregar usuario"):
+                    id = request.POST.get('id-user-add')
+                    username = get_username(id);
+                    add_user_in_database(id, username)
     return redirect('usuarios')
 
 def eliuser(request):
     if request.method == "POST":
-        id = request.POST.get('id-user-eli')
-        delete_user_in_database(id)
+        if request.user.is_authenticated:
+            if request.user.is_active:
+                if request.user.tiene_permiso("eliminar usuario"):
+                    id = request.POST.get('id-user-eli')
+                    delete_user_in_database(id)
     return redirect('usuarios')
 
 def actiuser(request):
     if request.method == "POST":
-        id = request.POST.get('id-user-acti')
-        perma_activate_user_in_database(id)
+        if request.user.is_authenticated:
+            if request.user.is_active:
+                if request.user.tiene_permiso("habilitar usuario"):
+                    id = request.POST.get('id-user-acti')
+                    perma_activate_user_in_database(id)
     return redirect('usuarios')
 
 def desuser(request):
     if request.method == "POST":
-        id = request.POST.get('id-user-des')
-        opcion = request.POST.get('opcion-desactivar')
-        perma_deactivate_user_in_database(id, opcion)
+        if request.user.is_authenticated:
+            if request.user.is_active:
+                if request.user.tiene_permiso("deshabilitar usuario"):
+                    id = request.POST.get('id-user-des')
+                    opcion = request.POST.get('opcion-desactivar')
+                    perma_deactivate_user_in_database(id, opcion)
+    return redirect('usuarios')
+
+def moduser(request):
+    if request.method == "POST":
+        if request.user.is_authenticated:
+            if request.user.is_active:
+                if request.user.tiene_permiso("modificar usuario"):
+                    id = request.POST.get('id-user-mod')
+                    rol = request.POST.get('opcion-modificar')
+                    modificar_rol_usuario(id, rol)
     return redirect('usuarios')
