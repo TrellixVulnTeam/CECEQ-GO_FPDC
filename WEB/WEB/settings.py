@@ -26,7 +26,7 @@ SECRET_KEY = '1v^(ydt2nq)c$ess9f*x9m#mht@oh@mdt@fn&b&1(4^vp0(4fr'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+SITE_ID = 1
 
 # Application definition
 
@@ -137,4 +137,5 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = "/home/gimape/CECEQ-GO/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "sfiles"), )
