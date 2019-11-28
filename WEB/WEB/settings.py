@@ -92,7 +92,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
-            'sql_mode ': 'STRICT_ALL_TABLES',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     },
     'oficial': {
@@ -103,7 +103,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
-            'sql_mode ': 'STRICT_ALL_TABLES',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
