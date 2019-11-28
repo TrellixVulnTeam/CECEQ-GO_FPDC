@@ -85,19 +85,19 @@ def perma_deactivate_user_in_database(id, opcion):
     instance.is_active = 0
     instance.save()
     if opcion == "2":
-        t1 = timezone.localtime() + timezone.timedelta(days=3)
+        t1 = timezone.localtime() + timezone.timedelta(minutes=3)
         #t1 -= make_naive(t1, timezone=timezone.utc)-make_naive(t1)
         temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
     elif opcion == "3":
-        t1 = timezone.localtime() + timezone.timedelta(days=7)
+        t1 = timezone.localtime() + timezone.timedelta(minutes=7)
         #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
         temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
     elif opcion == "4":
-        t1 = timezone.localtime() + timezone.timedelta(days=15)
+        t1 = timezone.localtime() + timezone.timedelta(minutes=15)
         #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
         temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
     elif opcion == "5":
-        t1 = timezone.localtime() + timezone.timedelta(days=30)
+        t1 = timezone.localtime() + timezone.timedelta(minutes=30)
         #t1 -= make_naive(t1, timezone=timezone.utc) - make_naive(t1)
         temp_activate_user_in_database(id, schedule=t1, verbose_name=id)
 
