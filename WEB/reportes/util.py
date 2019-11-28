@@ -37,8 +37,8 @@ def get_anonimus_users_year():
     return number
 
 def get_anonimus_users_today():
-    today  = date.today()
-    users_r = UsuariosAnonimos.objects.filter(time = today)
+    today = date.today()
+    users_r = UsuariosAnonimos.objects.filter(time__year=today.year, time__month=today.month, time__day=today.day)
     list_of_ids = []
     number = 0
     for user_r in users_r:

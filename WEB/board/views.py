@@ -15,7 +15,6 @@ def dash(request):
         if get_error_user(request) == 1:
             error_message = "No tiene permiso para realizar esa acción"
             set_error_user(request, 0)
-        users_anon = get_anonimus_users()
         args = {'users_anon':users_anon,'users_month':users_month,'users_year':users_year, 'error_message': error_message}
         return render(request, 'board/dashboard.html', args)
     return redirect('/')
