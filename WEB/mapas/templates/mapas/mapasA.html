@@ -66,8 +66,17 @@
                         </button>
                     </div>
                     <h1>El sigueinte mapa corresponde al salon:{{ curso.id_espacio }}</h1>
-                    <img src ="{%  static '/img/mapas/1.PNG' %}" width="100%" height="100%">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    {% with curso.id_espacio|stringformat:"i" as numero %}
+                        {% with '/img/mapas/'|add:numero|add:'.PNG' as image_static %}
+                            {%static image_static as ruta%}
+                            {% if image_static|image_exists %}
+                            <img src ={{ruta}} width="100%" height="100%">
+                            {% else %}
+                            <img src ="{%  static '/img/mapas/1.PNG' %}" width="100%" height="100%">
+                            {% endif %}
+                        {% endwith %}
+                    {% endwith %}
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
