@@ -91,6 +91,9 @@ DATABASES = {
         'PASSWORD': 'cecequbiqro',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode ': 'STRICT_ALL_TABLES',
+        },
     },
     'oficial': {
         'ENGINE': 'django.db.backends.mysql',
@@ -99,6 +102,9 @@ DATABASES = {
         'PASSWORD': 'cecequbiqro',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode ': 'STRICT_ALL_TABLES',
+        },
     }
 }
 DATABASE_ROUTERS = ['usuarios.routers.UsuariosRouter']
