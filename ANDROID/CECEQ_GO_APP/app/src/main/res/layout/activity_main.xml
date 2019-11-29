@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    app:umanoPanelHeight="60dp"
+    app:umanoShadowHeight="20dp"
+    android:gravity="bottom"
+    android:id="@+id/slideUpPanel_all">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Mapbox View: style can change, url:"mapbox://styles/1209070/ck0zs9lj409vj1cqpu16f2qxu"-->
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            mapbox:mapbox_cameraTargetLat="20.585739"
+            mapbox:mapbox_cameraTargetLng="-100.386301"
+            mapbox:mapbox_cameraZoom="17.5"
+            mapbox:mapbox_cameraBearing="34.33"
+            mapbox:mapbox_cameraTilt="50.25"
+            mapbox:mapbox_cameraZoomMax="40"
+            mapbox:mapbox_cameraZoomMin="6"
+            mapbox:mapbox_uiCompassMarginTop="80dp"
+            mapbox:mapbox_uiCompassMarginRight="15dp">
+
+
+            <com.mancj.materialsearchbar.MaterialSearchBar
+                style="@style/MaterialSearchBarLight"
+                android:id="@+id/searchBar"
+                app:mt_speechMode="false"
+                app:mt_hint="Salón A5"
+                app:mt_maxSuggestionsCount="10"
+                app:mt_searchBarColor="@color/searchBarBackground"
+                app:mt_textColor="@color/searchBarTextColorDark"
+                app:mt_placeholder="Buscar Salón"
+                app:mt_placeholderColor="@color/searchBarPlaceholderColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                />
+
+            <LinearLayout
+                android:id="@+id/floor_level_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+
+                android:orientation="vertical">
+
+
+                <Button
+                    android:id="@+id/second_level_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button_white"
+                    android:text="PA"
+                    android:textColor="@color/TextColor"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:id="@+id/ground_level_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/rounded_button_light_blue"
+                    android:text="PB"
+                    android:textColor="@color/TextColor"/>
+
+            </LinearLayout>
+
+        </com.mapbox.mapboxsdk.maps.MapView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/slideup_menu_rl">
+
+        <LinearLayout
+            android:id="@+id/slideup_first_info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="Cursos del CECEQ"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Explora el CECEQ"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/spashscreen_logo"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

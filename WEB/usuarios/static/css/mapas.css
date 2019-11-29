@@ -1,0 +1,35 @@
+.buttons_map{
+    width: 85%;
+    height: 100%;
+    color: white;
+
+}
+
+.container_map_alto{
+    background-image: url("../img/mapa_alto.png");
+  background-size: 80%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.container_map_bajo{
+    background-image: url("../img/mapa_bajo.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.salones_1{
+
+    width: 10em;
+    height: 10em;
+}
+.salones_1:hover{
+
+    width: 10em;
+    height: 10em;
+    background: #1da1f2;
+
+    opacity: .5;
+}
