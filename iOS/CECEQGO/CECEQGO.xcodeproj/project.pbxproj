@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		701754B0C6F94F1FBF61416D /* Pods_CECEQGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5686F7AD2532AB979FF04FE4 /* Pods_CECEQGO.framework */; };
 		8BD7BCCC2CFEE53C843FAD3A /* Pods_CECEQGOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC60DA0FE42EC27A89E6414 /* Pods_CECEQGOTests.framework */; };
+		CD028D9823714B4A00570C39 /* AllCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD028D9723714B4A00570C39 /* AllCourses.swift */; };
 		CD3820542339C0F100263865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3820532339C0F100263865 /* AppDelegate.swift */; };
 		CD3820562339C0F100263865 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3820552339C0F100263865 /* HomeViewController.swift */; };
 		CD3820592339C0F100263865 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3820572339C0F100263865 /* Main.storyboard */; };
@@ -18,8 +18,16 @@
 		CD3820742339C0F400263865 /* CECEQGOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3820732339C0F400263865 /* CECEQGOUITests.swift */; };
 		CD3C4DD3233C3BE20056B41B /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4DD2233C3BE20056B41B /* CoursesTableViewCell.swift */; };
 		CD3EC91D233EB9F100E0B314 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3EC91C233EB9F100E0B314 /* MoreInformationViewController.swift */; };
+		CD43889B238F39710057A65A /* Planta_Baja_CECEQ.geojson in Resources */ = {isa = PBXBuildFile; fileRef = CD43889A238F39710057A65A /* Planta_Baja_CECEQ.geojson */; };
+		CD43889D238F397B0057A65A /* Acceso_CECEQ.geojson in Resources */ = {isa = PBXBuildFile; fileRef = CD43889C238F397B0057A65A /* Acceso_CECEQ.geojson */; };
+		CD924A7E23583D9D00278980 /* terms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD924A7D23583D9C00278980 /* terms.pdf */; };
+		CD924A8123583F5700278980 /* TermsYCondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD924A8023583F5700278980 /* TermsYCondViewController.swift */; };
+		CD9AE62023728D1B0078D30F /* EspacioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9AE61F23728D1B0078D30F /* EspacioModel.swift */; };
+		CD9AE62223728E420078D30F /* PlantaAltaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9AE62123728E420078D30F /* PlantaAltaModel.swift */; };
+		CDE9F198237B5F02009EFDE4 /* Planta_Alta_CECEQ.geojson in Resources */ = {isa = PBXBuildFile; fileRef = CDE9F197237B5F02009EFDE4 /* Planta_Alta_CECEQ.geojson */; };
 		CDEC5A422345920800FF1BD8 /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC5A412345920800FF1BD8 /* CoursesModel.swift */; };
 		CDEC5A442345ADC500FF1BD8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC5A432345ADC500FF1BD8 /* HomeModel.swift */; };
+		F9CC941D88760A433868018F /* Pods_CECEQGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5686F7AD2532AB979FF04FE4 /* Pods_CECEQGO.framework */; };
 		FB413A539DAE84B5A4E4A5CA /* Pods_CECEQGOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5924231B63EA8A65CB282C53 /* Pods_CECEQGOUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +58,7 @@
 		937F4456905B223A35F9E564 /* Pods-CECEQGOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CECEQGOTests.debug.xcconfig"; path = "Target Support Files/Pods-CECEQGOTests/Pods-CECEQGOTests.debug.xcconfig"; sourceTree = "<group>"; };
 		999643D0D9B6E7E48DB2CA94 /* Pods-CECEQGOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CECEQGOTests.release.xcconfig"; path = "Target Support Files/Pods-CECEQGOTests/Pods-CECEQGOTests.release.xcconfig"; sourceTree = "<group>"; };
 		A257318B98302A7DA401DB2B /* Pods-CECEQGOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CECEQGOUITests.release.xcconfig"; path = "Target Support Files/Pods-CECEQGOUITests/Pods-CECEQGOUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CD028D9723714B4A00570C39 /* AllCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCourses.swift; sourceTree = "<group>"; };
 		CD3820502339C0F100263865 /* CECEQGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CECEQGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3820532339C0F100263865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD3820552339C0F100263865 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +74,13 @@
 		CD3820752339C0F400263865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD3C4DD2233C3BE20056B41B /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
 		CD3EC91C233EB9F100E0B314 /* MoreInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationViewController.swift; sourceTree = "<group>"; };
+		CD43889A238F39710057A65A /* Planta_Baja_CECEQ.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Planta_Baja_CECEQ.geojson; sourceTree = "<group>"; };
+		CD43889C238F397B0057A65A /* Acceso_CECEQ.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Acceso_CECEQ.geojson; sourceTree = "<group>"; };
+		CD924A7D23583D9C00278980 /* terms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = terms.pdf; sourceTree = "<group>"; };
+		CD924A8023583F5700278980 /* TermsYCondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsYCondViewController.swift; sourceTree = "<group>"; };
+		CD9AE61F23728D1B0078D30F /* EspacioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EspacioModel.swift; sourceTree = "<group>"; };
+		CD9AE62123728E420078D30F /* PlantaAltaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantaAltaModel.swift; sourceTree = "<group>"; };
+		CDE9F197237B5F02009EFDE4 /* Planta_Alta_CECEQ.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Planta_Alta_CECEQ.geojson; sourceTree = "<group>"; };
 		CDEC5A412345920800FF1BD8 /* CoursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
 		CDEC5A432345ADC500FF1BD8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				701754B0C6F94F1FBF61416D /* Pods_CECEQGO.framework in Frameworks */,
+				F9CC941D88760A433868018F /* Pods_CECEQGO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,11 +161,11 @@
 		CD3820522339C0F100263865 /* CECEQGO */ = {
 			isa = PBXGroup;
 			children = (
-				CDEC5A40234591B000FF1BD8 /* Utils */,
-				CD3C4DD1233C3B280056B41B /* Controller */,
+				CD924A7C23583D7D00278980 /* Resources */,
+				CDEC5A40234591B000FF1BD8 /* Models */,
+				CD3C4DD1233C3B280056B41B /* Views */,
 				CD3820532339C0F100263865 /* AppDelegate.swift */,
 				CD3820572339C0F100263865 /* Main.storyboard */,
-				CD38205A2339C0F300263865 /* Assets.xcassets */,
 				CD38205C2339C0F300263865 /* LaunchScreen.storyboard */,
 				CD38205F2339C0F300263865 /* Info.plist */,
 			);
@@ -174,20 +190,49 @@
 			path = CECEQGOUITests;
 			sourceTree = "<group>";
 		};
-		CD3C4DD1233C3B280056B41B /* Controller */ = {
+		CD3C4DD1233C3B280056B41B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD924A7F23583F0E00278980 /* Terminos y Condiciones */,
 				CDEC5A3F2345919000FF1BD8 /* MoreInformationViewController */,
 				CDEC5A3E2345916900FF1BD8 /* HomeViewController */,
 			);
-			path = Controller;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD924A7B23580A3900278980 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD3C4DD2233C3BE20056B41B /* CoursesTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		CD924A7C23583D7D00278980 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD38205A2339C0F300263865 /* Assets.xcassets */,
+				CD43889A238F39710057A65A /* Planta_Baja_CECEQ.geojson */,
+				CD43889C238F397B0057A65A /* Acceso_CECEQ.geojson */,
+				CDE9F197237B5F02009EFDE4 /* Planta_Alta_CECEQ.geojson */,
+				CD924A7D23583D9C00278980 /* terms.pdf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD924A7F23583F0E00278980 /* Terminos y Condiciones */ = {
+			isa = PBXGroup;
+			children = (
+				CD924A8023583F5700278980 /* TermsYCondViewController.swift */,
+			);
+			path = "Terminos y Condiciones";
 			sourceTree = "<group>";
 		};
 		CDEC5A3E2345916900FF1BD8 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CD924A7B23580A3900278980 /* cells */,
 				CD3820552339C0F100263865 /* HomeViewController.swift */,
-				CD3C4DD2233C3BE20056B41B /* CoursesTableViewCell.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -200,13 +245,16 @@
 			path = MoreInformationViewController;
 			sourceTree = "<group>";
 		};
-		CDEC5A40234591B000FF1BD8 /* Utils */ = {
+		CDEC5A40234591B000FF1BD8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CDEC5A412345920800FF1BD8 /* CoursesModel.swift */,
 				CDEC5A432345ADC500FF1BD8 /* HomeModel.swift */,
+				CD028D9723714B4A00570C39 /* AllCourses.swift */,
+				CDEC5A412345920800FF1BD8 /* CoursesModel.swift */,
+				CD9AE62123728E420078D30F /* PlantaAltaModel.swift */,
+				CD9AE61F23728D1B0078D30F /* EspacioModel.swift */,
 			);
-			path = Utils;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,9 +365,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD924A7E23583D9D00278980 /* terms.pdf in Resources */,
+				CDE9F198237B5F02009EFDE4 /* Planta_Alta_CECEQ.geojson in Resources */,
 				CD38205E2339C0F300263865 /* LaunchScreen.storyboard in Resources */,
 				CD38205B2339C0F300263865 /* Assets.xcassets in Resources */,
+				CD43889D238F397B0057A65A /* Acceso_CECEQ.geojson in Resources */,
 				CD3820592339C0F100263865 /* Main.storyboard in Resources */,
+				CD43889B238F39710057A65A /* Planta_Baja_CECEQ.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,11 +483,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3C4DD3233C3BE20056B41B /* CoursesTableViewCell.swift in Sources */,
+				CD9AE62223728E420078D30F /* PlantaAltaModel.swift in Sources */,
 				CD3820562339C0F100263865 /* HomeViewController.swift in Sources */,
 				CDEC5A442345ADC500FF1BD8 /* HomeModel.swift in Sources */,
 				CD3EC91D233EB9F100E0B314 /* MoreInformationViewController.swift in Sources */,
+				CD9AE62023728D1B0078D30F /* EspacioModel.swift in Sources */,
 				CD3820542339C0F100263865 /* AppDelegate.swift in Sources */,
+				CD924A8123583F5700278980 /* TermsYCondViewController.swift in Sources */,
 				CDEC5A422345920800FF1BD8 /* CoursesModel.swift in Sources */,
+				CD028D9823714B4A00570C39 /* AllCourses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

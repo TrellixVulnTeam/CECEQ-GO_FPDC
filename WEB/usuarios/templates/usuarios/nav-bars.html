@@ -18,12 +18,17 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
               rel="stylesheet">
 
+
         <!-- Custom styles for this template-->
+        {% block estilos %}{% endblock %}
         <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/users.css' %}" rel="stylesheet">
-
-      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet'/>
+        <link href="{% static 'css/mapas.css' %}" rel="stylesheet">
+        <link href="{% static 'css/reportes.css' %}" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet'/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 
 
 
@@ -74,14 +79,14 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">CECEQ </h6>
-                        <a class="collapse-item" href="{% url 'mapasA' %}">Planta alta</a>
-                        <a class="collapse-item" href="{% url 'mapasB' %}">Planta baja</a>
+                        <a class="collapse-item" href="{% url 'mapasA' %}">Planta Alta y Baja</a>
+                        <!--<a class="collapse-item" href="{% url 'mapasB' %}">Planta baja</a>-->
                     </div>
                 </div>
             </li>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
-                Mapa
+                Reportes
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -94,9 +99,10 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes </h6>
-                        <a class="collapse-item" href="{% url 'reporte_1' %}">Reporte 1</a>
-                        <a class="collapse-item" href="#">Reporte 2</a>
-                        <a class="collapse-item" href="#">Reporte 3</a>
+                        <a class="collapse-item" href="{% url 're-vistas' %}">Visitas</a>
+                        <a class="collapse-item" href="{% url 're-usuarios' %}">Usuarios Activos</a>
+                        <a class="collapse-item" href="{% url 're-cursos' %}">Cursos</a>
+                        <a class="collapse-item" href="{% url 're-salones' %}">Salones</a>
                     </div>
                 </div>
             </li>
@@ -104,8 +110,17 @@
 
             <!--Divider -->
 
-
             <hr class="sidebar-divider d-none d-md-block">
+            <!--<div class="sidebar-heading">
+                Instalaciones
+            </div>
+            <li class="nav-item">
+
+                <a class="nav-link" href="{% url 'instalaciones' %}">
+                    <i class="fas fa-fw fa-user-friends"></i>
+                    <span>Instlaciones</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">-->
             <div class="sidebar-heading">
                 Usuarios
             </div>
@@ -140,19 +155,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                   aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -236,16 +238,12 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{request.user.username}}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ request.user.username }}</span>
 
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{% url 'perfil' %}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -261,25 +259,25 @@
 
                 <!-- Begin Page Content --------------------------------------------------------------->
                 <div class="container-fluid">
-                {% block contenido %} {% endblock %}
+                    {% block contenido %} {% endblock %}
                 </div>
                 <!-- /.container-fluid ---------------------------------------------------------------->
 
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; CECEQ - GO 2019</span>
             </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+            <!-- End of Main Content -->
 
-    </div>
-    <!-- End of Content Wrapper -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; CECEQ - GO 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -318,6 +316,12 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+    <script src="{% static 'js/reportes.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
 
     </body>

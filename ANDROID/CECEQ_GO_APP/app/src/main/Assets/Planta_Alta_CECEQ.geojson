@@ -1,0 +1,1054 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "RCI 1",
+        "render": "RCI 1",
+        "show_region": "true",
+        "id": "rci1"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386388,
+              20.585267
+            ],
+            [
+              -100.386352,
+              20.585336
+            ],
+            [
+              -100.386283,
+              20.585305
+            ],
+            [
+              -100.386318,
+              20.585237
+            ],
+            [
+              -100.386388,
+              20.585267
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "035befd67928449247bd337be8e14fc4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Biblioteca Francisco Cervantes PA",
+        "render": "Biblioteca Francisco Cervantes PA",
+        "show_region": "true",
+        "id": "bfce/PA"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386105,
+              20.586048
+            ],
+            [
+              -100.386041,
+              20.586171
+            ],
+            [
+              -100.385776,
+              20.586052
+            ],
+            [
+              -100.385807,
+              20.585982
+            ],
+            [
+              -100.385714,
+              20.585941
+            ],
+            [
+              -100.385799,
+              20.585758
+            ],
+            [
+              -100.385864,
+              20.585787
+            ],
+            [
+              -100.385929,
+              20.585654
+            ],
+            [
+              -100.385948,
+              20.585663
+            ],
+            [
+              -100.385915,
+              20.585732
+            ],
+            [
+              -100.385989,
+              20.585763
+            ],
+            [
+              -100.385896,
+              20.585957
+            ],
+            [
+              -100.386105,
+              20.586048
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "07d8525ed27acd81746b47c8647d0843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Baños PA A",
+        "render": "Baños PA A",
+        "show_region": "true",
+        "id": "baño/PA/A"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386785,
+              20.585847
+            ],
+            [
+              -100.386755,
+              20.585909
+            ],
+            [
+              -100.386691,
+              20.585882
+            ],
+            [
+              -100.38672,
+              20.58582
+            ],
+            [
+              -100.386785,
+              20.585847
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "1ae3bffdbd8e861a9278c6b0e972bfae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "RCI General",
+        "render": "RCI General",
+        "show_region": "true",
+        "id": "rcigral"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.38618,
+              20.585344
+            ],
+            [
+              -100.386091,
+              20.585533
+            ],
+            [
+              -100.386019,
+              20.585504
+            ],
+            [
+              -100.385989,
+              20.585569
+            ],
+            [
+              -100.3859,
+              20.585531
+            ],
+            [
+              -100.385958,
+              20.585408
+            ],
+            [
+              -100.38605,
+              20.585446
+            ],
+            [
+              -100.38614,
+              20.585245
+            ],
+            [
+              -100.386213,
+              20.585277
+            ],
+            [
+              -100.38618,
+              20.585344
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "220eb94d3285c1163ca931ce9665f969"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 5",
+        "render": "Salón 5",
+        "show_region": "true",
+        "id": "salon/s5"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386948,
+              20.585684
+            ],
+            [
+              -100.386916,
+              20.585747
+            ],
+            [
+              -100.386873,
+              20.585729
+            ],
+            [
+              -100.386904,
+              20.585665
+            ],
+            [
+              -100.386948,
+              20.585684
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "2cf32da909a7a689a7f5f8d92c7790f6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Escalera PA B",
+        "render": "Escalera PA B",
+        "show_region": "true",
+        "id": "escalera/PA/B"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386173,
+              20.586079
+            ],
+            [
+              -100.386142,
+              20.586139
+            ],
+            [
+              -100.386075,
+              20.586108
+            ],
+            [
+              -100.386106,
+              20.586049
+            ],
+            [
+              -100.386173,
+              20.586079
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "2fb93d323f17312345f7f969c165de6b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Escalera PA A",
+        "render": "Escalera PA A",
+        "show_region": "true",
+        "id": "escalera/PA/A"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386718,
+              20.585982
+            ],
+            [
+              -100.386689,
+              20.586039
+            ],
+            [
+              -100.386628,
+              20.586014
+            ],
+            [
+              -100.386656,
+              20.585956
+            ],
+            [
+              -100.386718,
+              20.585982
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "363aa5b3ca7f5c5649d99f07a0727621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Baños PA C",
+        "render": "Baños PA C",
+        "show_region": "true",
+        "id": "baño/PA/C"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386022,
+              20.585695
+            ],
+            [
+              -100.385989,
+              20.585763
+            ],
+            [
+              -100.385915,
+              20.585731
+            ],
+            [
+              -100.385948,
+              20.585663
+            ],
+            [
+              -100.386022,
+              20.585695
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "43fa3290c238565e1dbb9210cca8aa97"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 3",
+        "render": "Salón 3",
+        "show_region": "true",
+        "id": "salon/s3"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386884,
+              20.585811
+            ],
+            [
+              -100.386853,
+              20.585875
+            ],
+            [
+              -100.386811,
+              20.585857
+            ],
+            [
+              -100.386842,
+              20.585794
+            ],
+            [
+              -100.386884,
+              20.585811
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "64cb83256b703f8c0ee463381ffe71ec"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Auditorio Central",
+        "render": "Auditorio Central",
+        "show_region": "true",
+        "id": "audicentral"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386646,
+              20.586277
+            ],
+            [
+              -100.386618,
+              20.586336
+            ],
+            [
+              -100.386284,
+              20.586199
+            ],
+            [
+              -100.386313,
+              20.586139
+            ],
+            [
+              -100.386646,
+              20.586277
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "681f41a7eaf3525de050fd609a05023a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 2",
+        "render": "Salón 2",
+        "show_region": "true",
+        "id": "salon/s2"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386879,
+              20.585655
+            ],
+            [
+              -100.386817,
+              20.585783
+            ],
+            [
+              -100.386751,
+              20.585756
+            ],
+            [
+              -100.386812,
+              20.585627
+            ],
+            [
+              -100.386879,
+              20.585655
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "6af11703303bce9d43195ee68995afdd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "RCI 3",
+        "render": "RCI 3",
+        "show_region": "true",
+        "id": "rci3"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386317,
+              20.585237
+            ],
+            [
+              -100.386283,
+              20.585306
+            ],
+            [
+              -100.386214,
+              20.585276
+            ],
+            [
+              -100.386247,
+              20.585207
+            ],
+            [
+              -100.386317,
+              20.585237
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "7999a53eb7da16d19bae8f3cc661e7be"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 4",
+        "render": "Salón 4",
+        "show_region": "true",
+        "id": "salon/s4"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386916,
+              20.585748
+            ],
+            [
+              -100.386884,
+              20.585811
+            ],
+            [
+              -100.386842,
+              20.585793
+            ],
+            [
+              -100.386873,
+              20.58573
+            ],
+            [
+              -100.386916,
+              20.585748
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "97bdd24d39c5ba5017ab3581910667bb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Escalera PA D",
+        "render": "Escalera PA D",
+        "show_region": "true",
+        "id": "escalera/PA/D"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386634,
+              20.585463
+            ],
+            [
+              -100.386599,
+              20.585527
+            ],
+            [
+              -100.386531,
+              20.585497
+            ],
+            [
+              -100.386566,
+              20.585432
+            ],
+            [
+              -100.386634,
+              20.585463
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "9bb6e716e9fa2592065d2e31cd0aa6ab"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Auditorio Adjunto",
+        "render": "Auditorio Adjunto",
+        "show_region": "true",
+        "id": "audiadjunto"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386555,
+              20.586311
+            ],
+            [
+              -100.386542,
+              20.586338
+            ],
+            [
+              -100.386509,
+              20.586324
+            ],
+            [
+              -100.38649,
+              20.586364
+            ],
+            [
+              -100.386268,
+              20.58627
+            ],
+            [
+              -100.386299,
+              20.586206
+            ],
+            [
+              -100.386555,
+              20.586311
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "ab0ed84a07ad98502008b1d155c573fd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 6",
+        "render": "Salón 6",
+        "show_region": "true",
+        "id": "salon/s6"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386141,
+              20.58614
+            ],
+            [
+              -100.386109,
+              20.586201
+            ],
+            [
+              -100.386042,
+              20.586171
+            ],
+            [
+              -100.386074,
+              20.586109
+            ],
+            [
+              -100.386141,
+              20.58614
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "ade93cb50e74049021b83a8185d3edb3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Baños PA B",
+        "render": "Baños PA B",
+        "show_region": "true",
+        "id": "baño/PA/B"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386312,
+              20.586138
+            ],
+            [
+              -100.386283,
+              20.586198
+            ],
+            [
+              -100.38621,
+              20.586167
+            ],
+            [
+              -100.386241,
+              20.586108
+            ],
+            [
+              -100.386312,
+              20.586138
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "b03faf5e7f9381caf770be12aa0c4678"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "RCI 2",
+        "render": "RCI 2",
+        "show_region": "true",
+        "id": "rci2"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386352,
+              20.585336
+            ],
+            [
+              -100.386318,
+              20.585404
+            ],
+            [
+              -100.386248,
+              20.585373
+            ],
+            [
+              -100.386283,
+              20.585306
+            ],
+            [
+              -100.386352,
+              20.585336
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "b2e836ccdcb9a4ee66cad177e78c5eee"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Baños PA D",
+        "render": "Baños PA D",
+        "show_region": "true",
+        "id": "baño/PA/D"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386501,
+              20.585402
+            ],
+            [
+              -100.386467,
+              20.585468
+            ],
+            [
+              -100.386398,
+              20.585438
+            ],
+            [
+              -100.386432,
+              20.585372
+            ],
+            [
+              -100.386501,
+              20.585402
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "bd163a53bb615ea0def6989df42817d2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 1",
+        "render": "Salón 1",
+        "show_region": "true",
+        "id": "salon/s1"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386816,
+              20.585783
+            ],
+            [
+              -100.386786,
+              20.585846
+            ],
+            [
+              -100.38672,
+              20.585819
+            ],
+            [
+              -100.38675,
+              20.585756
+            ],
+            [
+              -100.386816,
+              20.585783
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "d4673059f5f3d3ac8e8fbd1b11ba7c78"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "RCI Fila A/B",
+        "render": "RCI Fila A/B",
+        "show_region": "true",
+        "id": "rcifilaab"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386283,
+              20.585306
+            ],
+            [
+              -100.386248,
+              20.585373
+            ],
+            [
+              -100.38618,
+              20.585344
+            ],
+            [
+              -100.386213,
+              20.585276
+            ],
+            [
+              -100.386283,
+              20.585306
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "e88b9914770eab2f6b1abe94a832ccc3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Escalera PA C",
+        "render": "Escalera PA C",
+        "show_region": "true",
+        "id": "escalera/PA/C"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.38609,
+              20.585533
+            ],
+            [
+              -100.38606,
+              20.585598
+            ],
+            [
+              -100.385989,
+              20.585569
+            ],
+            [
+              -100.386019,
+              20.585505
+            ],
+            [
+              -100.38609,
+              20.585533
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "e917b4ca8755c6bec09e545ccb870c42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "level": "-90",
+        "navi": "true",
+        "stack": "3",
+        "english": "40",
+        "show_label": "true",
+        "spanish": "40",
+        "label": "Salón 7",
+        "render": "Salón 7",
+        "show_region": "true",
+        "id": "salon/s7"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -100.386271,
+              20.586219
+            ],
+            [
+              -100.386249,
+              20.586263
+            ],
+            [
+              -100.386177,
+              20.586231
+            ],
+            [
+              -100.386199,
+              20.586189
+            ],
+            [
+              -100.386271,
+              20.586219
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "fe4e543ce00e942ba59d948b6abb8bc7"
+    }
+  ],
+  "type": "FeatureCollection"
+}
