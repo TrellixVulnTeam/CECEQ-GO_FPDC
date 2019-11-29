@@ -1,27 +1,26 @@
 //
-//  HomeModel.swift
+//  AllCourses.swift
 //  CECEQGO
 //
-//  Created by Marla on 2019/10/2.
+//  Created by Marla on 2019/11/5.
 //  Copyright © 2019 Marla. All rights reserved.
 //
-
 import UIKit
 import Foundation
 
-protocol HomeModelProtocol: class {
-    func itemsDownloaded(items: NSArray)
+protocol AllCoursesProtocol: class {
+    func coursesDownloaded(items: NSArray)
 }
 
-class HomeModel: NSObject, NSURLConnectionDataDelegate {
+class AllCourses: NSObject, NSURLConnectionDataDelegate {
     
     //properties
     
-    weak var delegate: HomeModelProtocol!
+    weak var delegate: AllCoursesProtocol!
     
     var data = Data()
     
-    let urlPath: String = "https://www.upyougo.com.mx/service.php" //this will be changed to the path where service.php lives
+    let urlPath: String = "https://www.upyougo.com.mx/3monthCourses.php" //this will be changed to the path where service.php lives
 
     func downloadItems() {
         
@@ -68,14 +67,15 @@ class HomeModel: NSObject, NSURLConnectionDataDelegate {
             if let fecha = jsonElement["fecha"] as? String,
                 let des_subevento = jsonElement["des_subevento"] as? String,
                 let id_espacio = jsonElement["id_espacio"] as? String,
-                let nombre_completo = jsonElement["nombre_completo"] as? String
+                let nombre_completo = jsonElement["nombre_completo"] as? String,
+                let horainicial = jsonElement["horainicial"] as? String
             {
                 
                 courses.fecha = fecha
                 courses.des_subevento = des_subevento
                 courses.id_espacio = id_espacio
                 courses.nombre_completo = nombre_completo
-                
+                courses.horainicial = horainicial
             }
             
             coursesArray.add(courses)
@@ -84,8 +84,9 @@ class HomeModel: NSObject, NSURLConnectionDataDelegate {
         
         DispatchQueue.main.async(execute: { () -> Void in
             
-            self.delegate.itemsDownloaded(items: coursesArray)
+            self.delegate.coursesDownloaded(items: coursesArray)
             
         })
     }
 }
+

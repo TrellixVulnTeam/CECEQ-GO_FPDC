@@ -1,0 +1,85 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesoprincipal",
+        "label": "Acceso Principal",
+        "render": "Acceso Principal"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386818,
+          20.585523
+        ],
+        "type": "Point"
+      },
+      "id": "0d9516298869950876edbde2b14da1b8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesoB",
+        "label": "Acceso B",
+        "render": "Acceso B"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386162,
+          20.586149
+        ],
+        "type": "Point"
+      },
+      "id": "8010570deff872775475164ea3563282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesoc",
+        "label": "Acceso C",
+        "render": "Acceso C"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.385941,
+          20.58561
+        ],
+        "type": "Point"
+      },
+      "id": "80fa099cbbed83c88697d27d0611772b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesod",
+        "label": "Acceso D",
+        "render": "Acceso D"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386537,
+          20.585402
+        ],
+        "type": "Point"
+      },
+      "id": "81a626baa22bb643aeb70b402903a822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesoa",
+        "label": "Acceso A",
+        "render": "Acceso A"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386738,
+          20.585951
+        ],
+        "type": "Point"
+      },
+      "id": "bf2d48e1808c39cd0b6a41f9f02bc737"
+    }
+  ],
+  "type": "FeatureCollection"
+}

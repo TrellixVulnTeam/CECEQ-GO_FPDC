@@ -1,22 +1,23 @@
 //
-//  CoursesModel.swift
+//  EspacioModel.swift
 //  CECEQGO
 //
-//  Created by Marla on 2019/10/2.
+//  Created by Marla on 2019/11/5.
 //  Copyright © 2019 Marla. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Foundation
 
-class CoursesModel: NSObject {
+class EspacioModel : NSObject {
     
     //properties
     
-    var fecha: String?
-    var des_subevento: String?
-    var id_espacio: String?
-    var nombre_completo: String?
+   @objc var fecha: String?
+   @objc var des_subevento: String?
+   @objc var id_espacio: String?
+   @objc var nombre_completo: String?
     
     
     //empty constructor
