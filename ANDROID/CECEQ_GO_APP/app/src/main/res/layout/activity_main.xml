@@ -24,7 +24,6 @@
             mapbox:mapbox_cameraTargetLng="-100.386301"
             mapbox:mapbox_cameraZoom="17.5"
             mapbox:mapbox_cameraBearing="34.33"
-            mapbox:mapbox_cameraTilt="50.25"
             mapbox:mapbox_cameraZoomMax="40"
             mapbox:mapbox_cameraZoomMin="6"
             mapbox:mapbox_uiCompassMarginTop="80dp"
@@ -35,8 +34,8 @@
                 style="@style/MaterialSearchBarLight"
                 android:id="@+id/searchBar"
                 app:mt_speechMode="false"
-                app:mt_hint="Salón A5"
-                app:mt_maxSuggestionsCount="10"
+                app:mt_hint="Ejemplo: Salón A5"
+                app:mt_maxSuggestionsCount="3"
                 app:mt_searchBarColor="@color/searchBarBackground"
                 app:mt_textColor="@color/searchBarTextColorDark"
                 app:mt_placeholder="Buscar Salón"
@@ -60,23 +59,57 @@
 
                 android:orientation="vertical">
 
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
 
-                <Button
-                    android:id="@+id/second_level_button"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/rounded_button_white"
-                    android:text="PA"
-                    android:textColor="@color/TextColor"
-                    android:layout_marginBottom="10dp"/>
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/second_level_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        />
 
-                <Button
-                    android:id="@+id/ground_level_button"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/rounded_button_light_blue"
-                    android:text="PB"
-                    android:textColor="@color/TextColor"/>
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="PA"
+                        android:elevation="6dp"
+                        android:textSize="18dp"
+                        android:textColor="#fff"
+                        android:id="@+id/pa"
+                        app:layout_anchor="@+id/second_level_button"
+                        app:layout_anchorGravity="center"/>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/ground_level_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        />
+
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="PB"
+                        android:elevation="6dp"
+                        android:textSize="18dp"
+                        android:textColor="#fff"
+                        android:id="@+id/pb"
+                        app:layout_anchor="@+id/ground_level_button"
+                        app:layout_anchorGravity="center"/>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             </LinearLayout>
 
@@ -85,45 +118,59 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="500dp"
         android:id="@+id/slideup_menu_rl">
 
-        <LinearLayout
-            android:id="@+id/slideup_first_info_ll"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/TituloApp"
+            android:text="Cursos Disponibles"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:text="Cursos del CECEQ"/>
+        <!--AREA PARA DATOS DE SALOENS Y CURSOS-->
 
-        </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/extra_features"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="400dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_centerInParent="true">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Explora el CECEQ"/>
-            </RelativeLayout>
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/correo_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:floating_background_color="#2f6f57"
+            app:floating_left_icon="@drawable/baseline_mail_black_18dp"
+            app:floating_title="Comparte tu Experiencia"
+            app:floating_title_color="@android:color/white"
+            android:layout_gravity="top"
+            android:layout_centerHorizontal="true"
+            />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/spashscreen_logo"
-                />
-        </RelativeLayout>
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/quejas_y_sujerencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:floating_background_color="#2f6f57"
+            app:floating_left_icon="@drawable/voice"
+            app:floating_title="Quejas y Sugerencias       "
+            app:floating_title_color="@android:color/white"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="bottom"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+
+
 
     </RelativeLayout>
 

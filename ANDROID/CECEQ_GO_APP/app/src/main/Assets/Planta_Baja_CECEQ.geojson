@@ -551,14 +551,30 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "accesod",
+        "label": "Acceso D",
+        "render": "Acceso D"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386537,
+          20.585402
+        ],
+        "type": "Point"
+      },
+      "id": "1c6dddcdef87f722b200c2074d77fb2a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "level": "-90",
         "navi": "true",
         "stack": "3",
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Escalera PA D",
-        "render": "Escalera PA D",
+        "label": "Escalera D",
+        "render": "Escalera D",
         "show_region": "true",
         "id": "escalera/PA/D"
       },
@@ -600,8 +616,8 @@
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Baños PA B",
-        "render": "Baños PA B",
+        "label": "Baños B",
+        "render": "Baños B",
         "show_region": "true",
         "id": "baño/PA/B"
       },
@@ -723,14 +739,46 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "accesoprincipal",
+        "label": "Acceso Principal",
+        "render": "Acceso Principal"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386818,
+          20.585523
+        ],
+        "type": "Point"
+      },
+      "id": "533e827675243471db97519b8645b613"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesoB",
+        "label": "Acceso b",
+        "render": "Acceso B"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386162,
+          20.586149
+        ],
+        "type": "Point"
+      },
+      "id": "57e828183dff0c6e7ae1e6e1f72b6586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "level": "-90",
         "navi": "true",
         "stack": "3",
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Baños PA C",
-        "render": "Baños PA C",
+        "label": "Baños C",
+        "render": "Baños C",
         "show_region": "true",
         "id": "baño/PA/C"
       },
@@ -1292,8 +1340,8 @@
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Baños PA D",
-        "render": "Baños PA D",
+        "label": "Baños D",
+        "render": "Baños D",
         "show_region": "true",
         "id": "baño/PA/D"
       },
@@ -1418,8 +1466,8 @@
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Escalera PA A",
-        "render": "Escalera PA A",
+        "label": "Escalera A",
+        "render": "Escalera A",
         "show_region": "true",
         "id": "escalera/PA/A"
       },
@@ -2321,8 +2369,8 @@
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Baños PA A",
-        "render": "Baños PA A",
+        "label": "Baños A",
+        "render": "Baños A",
         "show_region": "true",
         "id": "baño/PA/A"
       },
@@ -2407,8 +2455,8 @@
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Escalera PA B",
-        "render": "Escalera PA B",
+        "label": "Escalera B",
+        "render": "Escalera B",
         "show_region": "true",
         "id": "escalera/PA/B"
       },
@@ -2808,6 +2856,38 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "accesoc",
+        "label": "Acceso C",
+        "render": "Acceso C"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.385941,
+          20.58561
+        ],
+        "type": "Point"
+      },
+      "id": "d22f9509bce2d590a285e9b29488daf0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "accesoa",
+        "label": "Acceso A",
+        "render": "Acceso A"
+      },
+      "geometry": {
+        "coordinates": [
+          -100.386738,
+          20.585951
+        ],
+        "type": "Point"
+      },
+      "id": "da3224bc5e8bee8ca1545af61c116b11"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "level": "-90",
         "navi": "true",
         "stack": "3",
@@ -3031,8 +3111,8 @@
         "english": "40",
         "show_label": "true",
         "spanish": "40",
-        "label": "Escalera PA C",
-        "render": "Escalera PA C",
+        "label": "Escalera C",
+        "render": "Escalera C",
         "show_region": "true",
         "id": "escalera/PA/C"
       },
