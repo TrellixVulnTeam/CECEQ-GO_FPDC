@@ -1,0 +1,104 @@
+{% extends 'usuarios/nav-bars.html' %}
+{% load static %}
+{% block titulo %} <title>Planta Alta</title> {% endblock %}
+
+{% block estilos %}
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet'/>
+{% endblock %}
+
+
+{% block contenido %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Mapas</h1>
+        </div>
+    </div>
+    <br>
+    <div class ="row">
+    </div>
+<br><br>
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="container mb-3 mt-3">
+                    <table class="table table-striped table-bordered" style="width:100%;" id="mydatatable">
+                        <thead>
+                        <tr>
+                            <th style="display: none">ID</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Ubicacion</th>
+                            <th>Mapa</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for curso in cursos %}
+                            <tr>
+                                <th style="display: none">{{ curso.id_espacio }}</th>
+                                <th>{{ curso.nombre_completo }}</th>
+                                <th>{{ curso.dirubicacion }}</th>
+                                <th>{{ curso.ubicacion }}</th>
+                                <th><button class ="btn btn-primary"data-toggle="modal"
+                            data-target="#mapa{{ curso.id_espacio }}">ver mapa</button></th>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for curso in cursos %}
+        <div class="modal" tabindex="-1" role="dialog" id="mapa{{ curso.id_espacio }}">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mapas CECEQ - GO</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <h1>El sigueinte mapa corresponde al salon:{{ curso.id_espacio }}</h1>
+                    {% with curso.id_espacio|stringformat:"i" as numero %}
+                        {% with '/img/mapas/'|add:numero|add:'.PNG' as image_static %}
+                            {%static image_static as ruta%}
+                            {% if image_static|image_exists %}
+                            <img src ={{ruta}} width="100%" height="100%">
+                            {% else %}
+                            <img src ="{%  static '/img/mapas/1.PNG' %}" width="100%" height="100%">
+                            {% endif %}
+                        {% endwith %}
+                    {% endwith %}
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $('#mydatatable').DataTable();
+    </script>
+{% endblock %}
+
+</html>

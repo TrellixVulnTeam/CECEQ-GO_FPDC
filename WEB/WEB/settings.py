@@ -25,8 +25,8 @@ SECRET_KEY = '1v^(ydt2nq)c$ess9f*x9m#mht@oh@mdt@fn&b&1(4^vp0(4fr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+SITE_ID = 1
 
 # Application definition
 
@@ -37,16 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'background_task',
+    'mapas',
+    'board',
     'usuarios',
     'login',
-    'mapas',
     'reportes',
     'instalaciones',
-    #'login.apps.LoginConfig',
-    #'instalaciones.apps.InstalacionesConfig',
-    #'mapas.apps.MapasConfig',
-    #'usuarios.apps.UsuariosConfig',
-    #'reportes.apps.ReportesConfig',
+
 
 ]
 
@@ -93,6 +91,9 @@ DATABASES = {
         'PASSWORD': 'cecequbiqro',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     },
     'oficial': {
         'ENGINE': 'django.db.backends.mysql',
@@ -101,6 +102,9 @@ DATABASES = {
         'PASSWORD': 'cecequbiqro',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 DATABASE_ROUTERS = ['usuarios.routers.UsuariosRouter']
@@ -108,28 +112,19 @@ DATABASE_ROUTERS = ['usuarios.routers.UsuariosRouter']
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-
+#AUTHENTICATION_BACKENDS = ['WEB.backends.PersonalizedLoginBackend']
+AUTHENTICATION_BACKENDS = (
+    # ... your other backends
+    'WEB.backends.PersonalizedLoginBackend',
+    # path to your custom authentication file
+    # appname.filename.classname
+)
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
@@ -142,3 +137,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "sfiles"), )

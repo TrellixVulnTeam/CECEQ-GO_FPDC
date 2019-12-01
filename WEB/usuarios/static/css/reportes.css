@@ -1,0 +1,12 @@
+.buttons_reportes{
+    width: 80%;
+    height: 3em;
+}
+
+.date_label{
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0.5px solid #000000;
+
+}

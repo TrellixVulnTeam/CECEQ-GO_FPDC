@@ -1,0 +1,17 @@
+.boton_modal{
+    height: 100%;
+    width: 50%;
+    background: transparent;
+    border: transparent;
+
+}
+
+.boton_modal:hover{
+    height: 100%;
+    width: 50%;
+    color: #005cff;
+    background: #00ff0e;
+    border: transparent;
+
+}
+
